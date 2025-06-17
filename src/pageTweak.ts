@@ -24,3 +24,21 @@ const url = window.location.href;
         main.insertBefore(wrapper, main.firstChild);
     }
 })();
+
+
+(function practicePageTweaks() {
+    if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/$/.test(url)) {
+        const problemParams = document.querySelector('.problem-page .problem-params');
+
+        const problemContent = document.querySelector('.problem-page .problem-content');
+
+        if (problemContent && problemParams) {
+            const dt = document.createElement('dt');
+            dt.textContent = '要求';
+            problemContent.appendChild(dt);
+            const dd = document.createElement('dd');
+            dd.appendChild(problemParams);
+            problemContent.appendChild(dd);
+        }
+    }
+})();

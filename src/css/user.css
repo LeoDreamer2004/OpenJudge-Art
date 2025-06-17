@@ -1,0 +1,94 @@
+@import "./global.css";
+
+
+/* 用户信息 */
+.user-info table {
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info table tbody tr {
+    padding: 1em;
+    background-color: var(--gray-9);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+
+    .avatar-image img {
+        border-radius: 10%;
+    }
+
+    .owner-info dl {
+        dt {
+            color: var(--blue-3);
+            font-weight: bold;
+        }
+
+        dd {
+            color: var(--gray-3);
+        }
+    }
+
+    .badges div {
+        background-color: var(--gray-9);
+        border-left: 2px solid var(--gray-8);
+        padding-left: 1em;
+
+        h4 {
+            color: var(--blue-3);
+            font-weight: bold;
+            border: none;
+        }
+    }
+}
+
+/* 左侧提交栏 */
+.my-group-list ul {
+    li {
+        display: block;
+        padding: 0.5em;
+        font-weight: bold;
+        border-bottom: 1px solid var(--gray-8);
+
+        &:hover {
+            background-color: var(--cyan-10);
+            border-radius: 5px;
+        }
+    }
+
+    li.current-group {
+        background-color: var(--cyan-9);
+    }
+
+    li a {
+        line-height: 2.5;
+        color: var(--cyan-3);
+
+        img {
+            border-radius: 50%;
+            margin-right: 0.5em;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+/* 最近题提交表格 */
+.recently-submit table {
+    .contest img {
+        border-radius: 50%;
+        margin-right: 0.5em;
+    }
+}
+
+/* 参加比赛表格 */
+.my-contest-list a {
+    color: var(--cyan-3);
+}
+
+.my-group-contest-info {
+    border-radius: 5px;
+    h3 {
+        background-color: var(--cyan-9);
+    }
+}

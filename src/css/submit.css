@@ -1,0 +1,56 @@
+@import "./global.css";
+
+#submit p {
+    display: none;
+}
+
+#submit form#solution_submit {
+    background-color: var(--gray-9);
+    padding: 1em;
+    padding-top: 0.2em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+
+    dt {
+        display: none;
+    }
+
+    dd {
+
+        /* 取消选项样式 */
+        input {
+            margin-left: 0px;
+            max-width: 50px;
+        }
+
+        input:hover {
+            border: none;
+        }
+
+        input:focus {
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    /* 代码 */
+    textarea {
+        width: 100%;
+        height: 300px;
+        width: 650px;
+        background-color: var(--gray-8);
+        outline: none;
+        color: var(--gray-2);
+        border: 1px solid var(--gray-6);
+        border-radius: 5px;
+        padding: 0.5em;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+    }
+
+    /* 提交按钮 */
+    button {
+        margin-right: 1em;
+        font-size: 12px;
+    }
+}

@@ -1,16 +1,6 @@
 @import "arco-palette.css";
 @import "global.css";
 
-img {
-    border-radius: 10%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-
-    &:hover {
-        transform: scale(1.05);
-    }
-}
-
 #main {
     h2 {
         font-size: 1.5em;
@@ -37,6 +27,16 @@ img {
     margin-bottom: 0;
     background-color: var(--gray-9);
     height: 200px;
+
+    img {
+        border-radius: 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }
 
 #main .contest-wrapper .contContainer {
@@ -65,6 +65,13 @@ img {
             height: 35px;
             width: 35px;
             margin-right: 0.5em;
+            border-radius: 10%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
     }
 
@@ -72,6 +79,10 @@ img {
         background-color: var(--blue-10);
         border-radius: 5px;
     }
+}
+
+#main .tips {
+    display: none;
 }
 
 /* 提示栏 */
@@ -106,6 +117,7 @@ img {
     img {
         height: 20px;
         width: 20px;
+        border-radius: 50%;
     }
 
     li {

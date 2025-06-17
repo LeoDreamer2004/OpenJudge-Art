@@ -1,0 +1,76 @@
+@import "./global.css";
+
+:root {
+    --contest-width: 600px;
+}
+
+.timeBar {
+    background-color: var(--cyan-10);
+    border: 2px solid var(--cyan-8);
+    border-radius: 5px;
+    width: var(--contest-width);
+    height: 120px;
+
+    dl.past-contest-info,
+    dl.current-contest-info {
+        .current-time {
+            color: var(--orangered-4);
+            font-size: 1.5em;
+            text-decoration: underline;
+            left: 225px;
+            top: -65px;
+        }
+
+        .start-time-dd,
+        .end-time-dd,
+        .current-time-dd {
+            color: var(--orangered-4);
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .start-time,
+        .end-time {
+            color: var(--cyan-4);
+            font-weight: bold;
+        }
+
+        .start-time-dd {
+            top: 35px;
+            left: 40px;
+        }
+
+        .start-time {
+            left: 90px;
+            top: 80px;
+        }
+
+        .current-time-dd {
+            color: var(--red-4);
+            left: 270px;
+            top: -px;
+        }
+
+        .end-time-dd {
+            left: 400px;
+            top: -7px;
+        }
+
+        .end-time {
+            left: 450px;
+            top: 37px;
+        }
+
+    }
+}
+
+
+.contest-description {
+    border: none;
+    width: var(--contest-width);
+}
+
+.contest-problem table {
+    width: var(--contest-width);
+    margin-top: 1em;
+}

@@ -1,35 +1,82 @@
 @import "./global.css";
 
+/* 问题描述 */
+.problem-page {
+    max-width: 620px;
+    background-color: var(--gray-9);
+    padding: 1em;
+    padding-top: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
 
-#pageTitle h2 {
-    font-size: 1.5em;
-    color: var(--cyan-4);
-    padding: 0.5em;
-    background-color: var(--cyan-9);
+    dt {
+        color: var(--blue-3);
+        padding-left: 0.5em;
+        margin: 1em 0;
+        line-height: 1.5;
+        border-left: 3px solid var(--blue-5);
+    }
+
+    .problem-params dt,
+    .problem-params dd {
+        font-size: 13px;
+        color: var(--blue-3);
+        padding: 0.5em;
+        margin: 1em 0;
+        line-height: 1.5;
+        border: none;
+        font-weight: bold;
+    }
+
+    /* 提交按钮 */
+    ul.bottomMenu {
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            background-color: var(--blue-8);
+            border-radius: 5px;
+            color: var(--blue-2);
+
+            a:hover {
+                text-decoration: none;
+            }
+        }
+
+        li:hover {
+            background-color: var(--blue-7);
+            transition: background-color 0.3s ease-in-out;
+        }
+    }
 }
 
-/* 菜单 */
-#topMenu ul {
-    padding: 5px;
-    padding-right: 10px;
-    li a {
+/* 信息栏 */
+.problem-statistics {
+    background-color: var(--gray-9);
+    padding: 1em;
+    border-radius: 10px;
+    margin: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    dl {
+        border-bottom: 1px solid var(--gray-8);
+
+        dt {
+            color: var(--cyan-4);
+            font-weight: bold;
+            /* float: none; */
+        }
+
+        dd {
+            color: var(--cyan-3);
+            margin-bottom: 0.5em;
+            /* float: right; */
+        }
+    }
+
+    h4 {
         color: var(--cyan-4);
-        font-size: 13px;
-    }
-
-    li.current-show a {
-        color: var(--cyan-3);
         font-weight: bold;
-        background: transparent;
-        border: none;
-        border-bottom: 2px solid var(--cyan-3); 
-    }
-
-    li a:hover {
-        color: var(--cyan-3);
-        background: transparent;
-        border: none;
-        border-bottom: 2px solid var(--cyan-3);
-        transition: color 0.3s ease-in-out;
+        margin-top: 0.5em;
     }
 }

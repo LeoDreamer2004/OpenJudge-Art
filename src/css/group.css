@@ -21,6 +21,20 @@
             width: 100%;
         }
     }
+
+    .group-description,
+    .admin-list h4,
+    .announcement h4 {
+        font-weight: bold;
+        color: var(--blue-2);
+    }
+
+    .announcement {
+        .date {
+            color: var(--gray-4);
+            font-size: 0.9em;
+        }
+    }
 }
 
 #main {
@@ -50,7 +64,6 @@
 
         a:hover {
             background-color: var(--blue-8);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             transition: all 0.5s;
             text-decoration: none;
         }
