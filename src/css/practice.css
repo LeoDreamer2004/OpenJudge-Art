@@ -1,0 +1,35 @@
+@import "./global.css";
+
+
+#pageTitle h2 {
+    font-size: 1.5em;
+    color: var(--cyan-4);
+    padding: 0.5em;
+    background-color: var(--cyan-9);
+}
+
+/* 菜单 */
+#topMenu ul {
+    padding: 5px;
+    padding-right: 10px;
+    li a {
+        color: var(--cyan-4);
+        font-size: 13px;
+    }
+
+    li.current-show a {
+        color: var(--cyan-3);
+        font-weight: bold;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--cyan-3); 
+    }
+
+    li a:hover {
+        color: var(--cyan-3);
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--cyan-3);
+        transition: color 0.3s ease-in-out;
+    }
+}
