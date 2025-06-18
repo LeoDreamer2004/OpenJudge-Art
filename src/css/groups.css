@@ -6,11 +6,11 @@
         display: block;
         padding: 0.5em;
         font-weight: bold;
-        border-bottom: 1px dotted var(--gray-7);
+        border-bottom: 1px dotted var(--gray-3);
         text-align: right;
 
         a {
-            color: var(--cyan-3);
+            color: var(--cyan-8);
             padding-right: 1em;
 
             &:hover {
@@ -19,12 +19,12 @@
         }
 
         &:hover {
-            background-color: var(--cyan-10);
+            background-color: var(--cyan-2);
         }
     }
 
     li.current {
-        background-color: var(--cyan-9);
+        background-color: var(--cyan-2);
     }
 }
 
@@ -39,36 +39,36 @@
 }
 
 #main.all-group h2 {
-    color: var(--cyan-3);
+    color: var(--cyan-8);
     background: none;
-    background-color: var(--cyan-10);
-    padding: 0.2em;
+    background-color: var(--cyan-2);
+    padding: 0.5em;
     padding-left: 0.5em;
-    border-left: 3px solid var(--cyan-4);
+    border-left: 3px solid var(--cyan-7);
     border-bottom: none;
 }
 
 #main.groups-category h1 {
-    color: var(--cyan-3);
-    background-color: var(--cyan-10);
+    color: var(--cyan-8);
+    background-color: var(--cyan-2);
     padding: 0.2em;
     padding-left: 0.5em;
-    border-left: 3px solid var(--cyan-4);
+    border-left: 3px solid var(--cyan-7);
 }
 
 /* 小组列表 */
 #main.groups-category ul li {
-    background-color: var(--cyan-10);
+    background-color: var(--cyan-1);
     border-radius: 5px;
     margin-right: 0.3em;
-    border: 1px solid var(--cyan-9);
+    border: 1px solid var(--cyan-3);
     padding: 0.1em;
 
     a {
-        color: var(--cyan-3);
+        color: var(--cyan-8);
 
         &:hover {
-            color: var(--cyan-2);
+            color: var(--cyan-9);
             text-decoration: none;
         }
     }
@@ -81,7 +81,7 @@
     }
 
     &:hover {
-        background-color: var(--cyan-9);
+        background-color: var(--cyan-3);
         transition: background-color 0.3s ease-in-out;
     }
 }
@@ -90,17 +90,17 @@
     display: inline-block;
     margin: 0.5em;
     padding-right: 0.5em;
-    background-color: var(--cyan-10);
+    background-color: var(--cyan-1);
     border-radius: 5px;
-    border: 1px solid var(--cyan-9);
+    border: 1px solid var(--cyan-2);
     max-width: 230px;
 
     a {
-        color: var(--cyan-3);
+        color: var(--cyan-8);
         text-decoration: none;
 
         &:hover {
-            color: var(--cyan-2);
+            color: var(--cyan-9);
             text-decoration: underline;
         }
     }
@@ -111,7 +111,7 @@
     }
 
     &:hover {
-        background-color: var(--cyan-9);
+        background-color: var(--cyan-3);
         transition: background-color 0.3s ease-in-out;
     }
 }

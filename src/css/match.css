@@ -5,8 +5,8 @@
 }
 
 .timeBar {
-    background-color: var(--cyan-10);
-    border: 2px solid var(--cyan-8);
+    background-color: var(--cyan-1);
+    border: 2px solid var(--cyan-2);
     border-radius: 5px;
     width: var(--contest-width);
     height: 120px;
@@ -14,9 +14,8 @@
     dl.past-contest-info,
     dl.current-contest-info {
         .current-time {
-            color: var(--orangered-4);
+            color: var(--orangered-7);
             font-size: 1.5em;
-            text-decoration: underline;
             left: 225px;
             top: -65px;
         }
@@ -24,14 +23,14 @@
         .start-time-dd,
         .end-time-dd,
         .current-time-dd {
-            color: var(--orangered-4);
+            color: var(--orangered-7);
             font-size: 1.2em;
             font-weight: bold;
         }
 
         .start-time,
         .end-time {
-            color: var(--cyan-4);
+            color: var(--cyan-5);
             font-weight: bold;
         }
 
@@ -46,7 +45,7 @@
         }
 
         .current-time-dd {
-            color: var(--red-4);
+            color: var(--red-5);
             left: 270px;
             top: -px;
         }

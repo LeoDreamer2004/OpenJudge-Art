@@ -14,7 +14,7 @@
 
 .user-info table tbody tr {
     padding: 1em;
-    background-color: var(--gray-9);
+    background-color: var(--gray-2);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 
     .avatar-image img {
@@ -23,29 +23,33 @@
 
     .owner-info dl {
         dt {
-            color: var(--blue-3);
+            color: var(--blue-8);
             font-weight: bold;
         }
 
         dd {
-            color: var(--gray-3);
+            color: var(--gray-8);
         }
     }
 
     .badges div {
-        background-color: var(--gray-9);
-        border-left: 2px solid var(--gray-8);
+        background-color: var(--gray-2);
+        border-left: 2px solid var(--gray-3);
         padding-left: 1em;
 
         h4 {
-            color: var(--blue-3);
+            color: var(--blue-8);
             font-weight: bold;
             border: none;
+        }
+
+        ul li {
+            color: var(--gray-6);
         }
     }
 
     a {
-        color: var(--blue-3);
+        color: var(--blue-7);
         text-decoration: none;
     }
 }
@@ -56,20 +60,20 @@
         display: block;
         padding: 0.5em;
         font-weight: bold;
-        border-bottom: 1px dotted var(--gray-7);
+        border-bottom: 1px dotted var(--gray-4);
 
         &:hover {
-            background-color: var(--cyan-10);
+            background-color: var(--cyan-2);
         }
     }
 
     li.current-group {
-        background-color: var(--cyan-9);
+        background-color: var(--cyan-2);
     }
 
     li a {
         line-height: 2.5;
-        color: var(--cyan-3);
+        color: var(--cyan-8);
 
         img {
             border-radius: 50%;
@@ -98,27 +102,27 @@
 
 .my-group-contest-info {
     border-radius: 5px;
-    background-color: var(--cyan-10);
+    background-color: var(--cyan-1);
 
     a {
-        color: var(--cyan-3);
+        color: var(--cyan-7);
     }
 
     h3 {
-        background-color: var(--cyan-9);
+        background-color: var(--cyan-2);
     }
 }
 
 /* 小组设定 */
 .my-contest-list .user-group-info dl {
     dt {
-        color: var(--cyan-3);
+        color: var(--cyan-9);
         font-weight: bold;
         width: 80px;
     }
 
     dd {
-        color: var(--cyan-2);
+        color: var(--cyan-8);
         margin-bottom: 0.5em;
     }
 }
@@ -132,7 +136,7 @@
     }
 
     a {
-        color: var(--cyan-3);
+        color: var(--cyan-8);
         text-decoration: none;
     }
 }

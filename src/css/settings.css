@@ -6,34 +6,42 @@ ul#navigation {
         display: block;
         padding: 0.5em;
         font-weight: bold;
-        border-bottom: 1px dotted var(--gray-7);
+        background-color: var(--gray-1);
+        border-bottom: 1px dotted var(--gray-3);
         text-align: right;
 
         a {
-            color: var(--blue-3);
+            color: var(--blue-8);
         }
 
         &:hover {
-            background-color: var(--blue-10);
+            background-color: var(--blue-2);
         }
     }
 }
 
 /* 用户表单 */
 form {
-    background: var(--gray-10);
+    background: var(--gray-1);
     padding: 1em;
     border-radius: 10px;
 }
 
-form dl {
+#main form dl {
     margin: 0.5em 0;
     padding: 0.5em;
     border: none;
 
     dt {
         font-weight: bold;
-        color: var(--blue-3);
+        color: var(--blue-7);
+        line-height: 2;
+    }
+
+    dd img {
+        width: 100px;
+        height: 100px;
+        border-radius: 10%;
     }
 }
 

@@ -3,7 +3,7 @@
 /* 问题描述 */
 .problem-page {
     max-width: 620px;
-    background-color: var(--gray-10);
+    background-color: var(--gray-2);
     padding: 1em;
     padding-top: 0;
     border-radius: 10px;
@@ -11,17 +11,17 @@
     margin-bottom: 1em;
 
     dt {
-        color: var(--blue-3);
+        color: var(--blue-6);
         padding-left: 0.5em;
         margin: 1em 0;
         line-height: 1.5;
-        border-left: 3px solid var(--blue-5);
+        border-left: 3px solid var(--blue-6);
     }
 
     .problem-params dt,
     .problem-params dd {
         font-size: 13px;
-        color: var(--blue-3);
+        color: var(--gray-8);
         padding: 0.5em;
         margin: 1em 0;
         line-height: 1.5;
@@ -34,9 +34,9 @@
         li {
             display: inline-block;
             margin-right: 10px;
-            background-color: var(--blue-8);
+            background-color: var(--blue-4);
             border-radius: 5px;
-            color: var(--blue-2);
+            color: var(--blue-9);
 
             a:hover {
                 text-decoration: none;
@@ -44,7 +44,7 @@
         }
 
         li:hover {
-            background-color: var(--blue-7);
+            background-color: var(--blue-5);
             transition: background-color 0.3s ease-in-out;
         }
     }
@@ -52,30 +52,26 @@
 
 /* 信息栏 */
 .problem-statistics {
-    background-color: var(--gray-10);
+    background-color: var(--gray-2);
     padding: 1em;
     border-radius: 10px;
     margin: 0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
     dl {
-        border-bottom: 1px solid var(--gray-8);
-
         dt {
-            color: var(--cyan-4);
+            color: var(--cyan-6);
             font-weight: bold;
-            /* float: none; */
         }
 
         dd {
-            color: var(--cyan-3);
+            color: var(--cyan-7);
             margin-bottom: 0.5em;
-            /* float: right; */
         }
     }
 
     h4 {
-        color: var(--cyan-4);
+        color: var(--cyan-6);
         font-weight: bold;
         margin-top: 0.5em;
     }

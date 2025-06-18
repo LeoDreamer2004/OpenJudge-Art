@@ -9,8 +9,14 @@ export default defineConfig({
       userscript: {
         author: 'LeoDreamer',
         icon: 'https://i1.hdslb.com/bfs/face/c08b00534afc32a256a7f8b4442ef92ed181b471.jpg@128w_128h_1c_1s.webp',
-        namespace: 'npm/vite-plugin-monkey',
+        description: 'Beautify your OpenJudge experience.',
+        namespace: 'leodreamer/openjudge-art',
         match: ['*://*.openjudge.cn/*'],
+        connect: ['pku.edu.cn'],
+        license: 'MIT',
+        $extra: {
+          'author-blog': 'https://LeoDreamer2004.github.io'
+        }
       },
     }),
   ],
