@@ -4,18 +4,31 @@
 #main {
     h2 {
         font-size: 1.5em;
-        color: var(--blue-4);
+        color: var(--blue-8);
         padding-bottom: 0.5em;
-        border-bottom: 1px solid var(--gray-8);
+        border-bottom: 1px solid var(--gray-3);
     }
 }
 
 /* 比赛滚动框 */
 #main .contest-wrapper {
+    h2 {
+        color: var(--blue-5);
+
+        a {
+            color: var(--blue-7);
+        }
+
+        .contestCount {
+            color: var(--blue-6);
+            font-weight: bold;
+        }
+    }
+
     border-radius: 5px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--gray-8);
-    background-color: var(--gray-10);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--gray-3);
+    background-color: var(--gray-2);
     padding: 1em;
     margin-bottom: 1em;
 }
@@ -25,7 +38,8 @@
     padding-left: 0;
     margin-top: 1em;
     margin-bottom: 0;
-    background-color: var(--gray-10);
+    background-color: var(--gray-2);
+    border-top-color: var(--gray-3);
     height: 200px;
 
     img {
@@ -41,9 +55,32 @@
 
 #main .contest-wrapper .contContainer {
     padding-left: 1em;
+    border-bottom-color: var(--gray-3);
 
     &:hover {
-        background-color: var(--blue-10);
+        background-color: var(--blue-3);
+    }
+
+    .groupLogo {
+        border: none;
+    }
+
+    .itemNarrow {
+        h3 a {
+            color: var(--blue-7);
+        }
+
+        .form dt {
+            color: var(--gray-9);
+        }
+
+        .form dd {
+            color: var(--gray-7);
+        }
+    }
+
+    .statsWrapper .statsBox .number {
+        text-shadow: none;
     }
 }
 
@@ -51,10 +88,26 @@
 #main .active-group {
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--gray-8);
-    background-color: var(--gray-10);
-    padding: 1em;
-    padding-bottom: 0;
+    border: 1px solid var(--gray-3);
+    background-color: var(--gray-2);
+    padding: 1em 1em 0;
+
+    h2 {
+        color: var(--blue-5);
+
+        span a {
+            color: var(--blue-7);
+        }
+    }
+
+    ul li .group-name {
+        color: var(--blue-7);
+
+        &:hover {
+            color: var(--orange-7);
+            text-decoration: none;
+        }
+    }
 
     li {
         display: block;
@@ -76,7 +129,7 @@
     }
 
     li:hover {
-        background-color: var(--blue-10);
+        background-color: var(--blue-3);
         border-radius: 5px;
     }
 }
@@ -90,28 +143,37 @@
 #side .appli-group {
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--gray-8);
-    background-color: var(--gray-10);
+    border: 1px solid var(--gray-3);
+    background-color: var(--gray-2);
+    color: var(--gray-7);
     padding: 1em;
     margin-bottom: 1em;
+
+    a {
+        color: var(--blue-7);
+
+        &:hover {
+            color: var(--orange-7);
+        }
+    }
 }
 
 /* 公告 */
 #side .announcements {
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--gray-8);
-    background-color: var(--gray-10);
+    border: 1px solid var(--gray-3);
+    background-color: var(--gray-2);
     padding: 1em;
     margin-bottom: 1em;
 
     h3 {
         padding: 0;
-        background: none;
-        background-color: transparent;
-        color: var(--blue-5);
+        background: transparent none;
+        color: var(--blue-6);
         font-size: 1.2em;
         margin-bottom: 0.5em;
+        border-bottom: 1px solid var(--gray-3);
     }
 
     img {
@@ -120,17 +182,31 @@
         border-radius: 50%;
     }
 
-    li {
+    ul li {
         margin-top: 0.5em;
+        color: var(--gray-8);
 
-        .date {
-            color: var(--gray-4);
+        .date .data {
+            color: var(--gray-8);
             font-size: 0.9em;
-            text-decoration: underline 1px var(--gray-7);
+            text-decoration: underline 1px var(--gray-8);
+        }
+
+        a {
+            color: var(--blue-7);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--orange-7);
+            }
         }
     }
 }
 
 #footer {
     display: block;
+}
+
+#siteBody #footer .wrapper {
+    border-top: 1px solid var(--gray-3);
 }

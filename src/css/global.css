@@ -21,7 +21,7 @@ table {
 
             td,
             th {
-                padding: 0.3em 0.5em!important;
+                padding: 0.3em 0.5em !important;
                 color: var(--cyan-2);
                 font-weight: bold;
             }
@@ -119,7 +119,7 @@ button {
 }
 
 #siteBody {
-    background: none;
+    background: var(--gray-1);
 }
 
 /* 顶栏 */
@@ -132,6 +132,7 @@ button {
 }
 
 #siteHeader.wrapper {
+    background-color: var(--gray-2);
     margin-bottom: 20px;
 }
 
@@ -147,11 +148,11 @@ button {
         font-size: 20px;
         font-weight: normal;
         font-family: "Open Sans", sans-serif;
-        color: var(--gray-3);
+        color: var(--gray-5);
 
         span {
             text-shadow: none;
-            color: var(--gray-6);
+            color: var(--gray-7);
         }
     }
 
@@ -163,26 +164,25 @@ button {
 }
 
 #headerTop .wrapper .logo {
-    padding: 5px;
-    padding-left: 8px;
+    padding: 5px 5px 5px 8px;
 }
 
 /* 大顶栏用户框 */
 #siteHeader.wrapper #topsearch {
-    margin: 0;
-    margin-right: 10px;
+    margin: 0 10px 0 0;
 
     #userMenu {
         border: none;
+        text-shadow: none;
 
         li {
             a {
-                color: var(--gray-4)
+                color: var(--gray-6)
             }
 
             a:hover {
                 text-decoration: none;
-                color: var(--blue-4);
+                color: var(--blue-5);
             }
         }
     }
@@ -210,8 +210,7 @@ button {
         input {
             border: 1px solid var(--gray-8);
             border-radius: 5px;
-            padding: 0;
-            padding-left: 0.5em;
+            padding: 0 0 0 0.5em;
             width: 200px;
         }
 
@@ -256,6 +255,7 @@ button {
     }
 
     /* 选项卡 */
+
     ul#mainNav {
         li {
             border-radius: 5px;
