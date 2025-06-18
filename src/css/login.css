@@ -7,7 +7,9 @@ body {
 }
 
 #sitePagebody,
+#pagebody,
 #sitePagebody .wrapper,
+#pagebody .wrapper,
 #main {
     align-items: center;
     display: flex;
@@ -22,8 +24,8 @@ body {
     height: 100vh;
 }
 
-form {
-    background: #fff;
+#main form {
+    background: var(--gray-2);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -47,8 +49,10 @@ form {
     line-height: 2;
 }
 
-.form dd input[type="text"],
-.form dd input[type="password"] {
+.form dd input,
+.form dd input {
+    border-color: var(--gray-3);
+    padding: 0.2em 0.5em;
     width: 100%;
 }
 
@@ -56,10 +60,10 @@ form {
     margin-bottom: 1rem;
 }
 
-button[type="submit"] {
+.user-login button[type="submit"] {
     width: 50%;
     padding: 0.5rem;
-    margin: 0;
+    margin: 1em;
     background-color: #007bff;
     color: white;
     border: none;
@@ -67,10 +71,10 @@ button[type="submit"] {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+    &:hover {
+        background-color: #0056b3;
+    }
 }
 
 .login-message {
@@ -86,6 +90,7 @@ button[type="submit"]:hover {
 
 .user-login a {
     color: #007bff;
+    font-size: 15px;
     text-decoration: none;
 }
 

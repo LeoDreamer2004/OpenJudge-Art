@@ -43,9 +43,12 @@
     background: none;
     background-color: var(--cyan-2);
     padding: 0.5em;
-    padding-left: 0.5em;
     border-left: 3px solid var(--cyan-7);
     border-bottom: none;
+
+    span {
+        right: 0.5em;
+    }
 }
 
 #main.groups-category h1 {

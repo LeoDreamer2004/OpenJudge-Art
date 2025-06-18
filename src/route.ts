@@ -32,7 +32,7 @@ function injectCss(css: string) {
 if (url == "http://openjudge.cn/") {
     injectCss(indexStyles);
     console.log('openjudge index styles loaded');
-} else if (url == "http://openjudge.cn/auth/login/") {
+} else if (/^http:\/\/.*openjudge.cn\/auth\/login\/$/.test(url)) {
     injectCss(loginStyles);
     console.log('openjudge login styles loaded');
 } else if (/^http:\/\/openjudge.cn\/settings.*$/.test(url)) {

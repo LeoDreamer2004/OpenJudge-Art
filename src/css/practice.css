@@ -4,6 +4,7 @@
 .problem-page {
     max-width: 620px;
     background-color: var(--gray-2);
+    border: 1px solid var(--gray-3);
     padding: 1em;
     padding-top: 0;
     border-radius: 10px;
@@ -37,6 +38,7 @@
             background-color: var(--blue-4);
             border-radius: 5px;
             color: var(--blue-9);
+            border: 1px solid var(--blue-5);
 
             a:hover {
                 text-decoration: none;
@@ -55,6 +57,7 @@
     background-color: var(--gray-2);
     padding: 1em;
     border-radius: 10px;
+    border: 1px solid var(--gray-3);
     margin: 0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
