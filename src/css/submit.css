@@ -18,8 +18,9 @@
     dd {
 
         /* 取消选项样式 */
+
         input {
-            margin-left: 0px;
+            margin-left: 0;
             max-width: 50px;
         }
 
@@ -34,8 +35,8 @@
     }
 
     /* 代码 */
+
     textarea {
-        width: 100%;
         height: 300px;
         width: 650px;
         background-color: var(--gray-8);
@@ -49,6 +50,7 @@
     }
 
     /* 提交按钮 */
+
     button {
         margin-right: 1em;
         font-size: 12px;
