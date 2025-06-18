@@ -1,0 +1,42 @@
+@import "./global.css";
+
+/* 左侧导航栏 */
+ul#navigation {
+    li {
+        display: block;
+        padding: 0.5em;
+        font-weight: bold;
+        border-bottom: 1px dotted var(--gray-7);
+        text-align: right;
+
+        a {
+            color: var(--blue-3);
+        }
+
+        &:hover {
+            background-color: var(--blue-10);
+        }
+    }
+}
+
+/* 用户表单 */
+form {
+    background: var(--gray-10);
+    padding: 1em;
+    border-radius: 10px;
+}
+
+form dl {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: none;
+
+    dt {
+        font-weight: bold;
+        color: var(--blue-3);
+    }
+}
+
+form[action="/api/user/modify-profile/"] p {
+    display: none;
+}

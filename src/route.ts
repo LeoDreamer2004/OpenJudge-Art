@@ -1,40 +1,69 @@
+import globalStyles from './css/global.css?inline';
+import indexStyles from './css/index.css?inline';
+import loginStyles from './css/login.css?inline';
+import settingsStyles from './css/settings.css?inline';
+import groupsStyles from './css/groups.css?inline';
+import groupStyles from './css/group.css?inline';
+import matchStyles from './css/match.css?inline';
+import rankingStyles from './css/ranking.css?inline';
+import practiceStyles from './css/practice.css?inline';
+import submitStyles from './css/submit.css?inline';
+import statisticsStyles from './css/statistics.css?inline';
+import userStyles from './css/user.css?inline';
+
 const url = window.location.href;
 
+function injectCss(css: string) {
+    var style = document.createElement('style');
+    style.textContent = css;
+    style.dataset.author = 'LeoDreamer';
+    style.id = 'OpenJudge-Art';
+
+    if (document.head) {
+        document.head.appendChild(style);
+    } else {
+        // Wait for the head to load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.head.appendChild(style);
+        });
+    }
+}
+
 if (url == "http://openjudge.cn/") {
-    import('./css/index.css').then(() => {
-        console.log('openjudge index styles loaded');
-    });
+    injectCss(indexStyles);
+    console.log('openjudge index styles loaded');
+} else if (url == "http://openjudge.cn/auth/login/") {
+    injectCss(loginStyles);
+    console.log('openjudge login styles loaded');
+} else if (/^http:\/\/openjudge.cn\/settings.*$/.test(url)) {
+    injectCss(settingsStyles);
+    console.log('openjudge settings styles loaded');
+} else if (/^http:\/\/openjudge.cn\/groups.*$/.test(url)) {
+    injectCss(groupsStyles);
+    console.log('openjudge groups styles loaded');
 } else if (/^http:\/\/.*\.openjudge\.cn\/$/.test(url)) {
-    import('./css/group.css').then(() => {
-        console.log('openjudge group styles loaded');
-    });
+    injectCss(groupStyles);
+    console.log('openjudge group styles loaded');
 } else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/$/.test(url)) {
-    import('./css/match.css').then(() => {
-        console.log('openjudge match styles loaded');
-    });
+    injectCss(matchStyles);
+    console.log('openjudge match styles loaded');
 } else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/ranking\/$/.test(url)) {
-    import('./css/ranking.css').then(() => {
-        console.log('openjudge ranking styles loaded');
-    });
+    injectCss(rankingStyles);
+    console.log('openjudge ranking styles loaded');
 } else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/$/.test(url)) {
-    import('./css/practice.css').then(() => {
-        console.log('openjudge practice styles loaded');
-    });
+    injectCss(practiceStyles);
+    console.log('openjudge practice styles loaded');
 } else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/submit\/$/.test(url)) {
-    import('./css/submit.css').then(() => {
-        console.log('openjudge submit styles loaded');
-    });
+    injectCss(submitStyles);
+    console.log('openjudge submit styles loaded');
 } else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/statistics\/$/.test(url)) {
-    import('./css/statistics.css').then(() => {
-        console.log('openjudge statistics styles loaded');
-    });
+    injectCss(statisticsStyles);
+    console.log('openjudge statistics styles loaded');
 } else if (/^http:\/\/openjudge\.cn\/user\/.*/.test(url)) {
-    import('./css/user.css').then(() => {
-        console.log('openjudge user styles loaded');
-    });
+    injectCss(userStyles);
+    console.log('openjudge user styles loaded');
 } else {
     console.log(url);
-    import('./css/global.css').then(() => {
-        console.log('openjudge common styles loaded');
-    });
+    injectCss(globalStyles);
+    console.log('openjudge global styles loaded');
 }

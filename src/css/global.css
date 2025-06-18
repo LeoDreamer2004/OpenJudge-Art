@@ -19,9 +19,21 @@ table {
         tr {
             background-color: var(--cyan-9) !important;
 
-            td {
+            td,
+            th {
+                padding: 0.3em 0.5em!important;
                 color: var(--cyan-2);
                 font-weight: bold;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+
+            td,
+            th {
+                padding: 0.2em 0.2em !important;
             }
         }
     }
@@ -34,7 +46,7 @@ table {
         background-color: var(--blue-10);
     }
 
-    tr a {
+    tr td:not(.result) a {
         color: var(--cyan-2);
     }
 }
@@ -74,6 +86,11 @@ textarea {
         border-color: var(--blue-5);
         box-shadow: 0 0 5px var(--blue-5);
     }
+}
+
+input[type="radio"]:focus {
+    border: none;
+    box-shadow: none;
 }
 
 button {
@@ -123,6 +140,7 @@ button {
 #headerTop .wrapper .logo {
     margin: 0;
     padding: 8px;
+    outline: none;
 
     a {
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
@@ -195,8 +213,6 @@ button {
             padding: 0;
             padding-left: 0.5em;
             width: 200px;
-
-
         }
 
         button {
@@ -210,30 +226,33 @@ button {
 #header {
     background-color: var(--cyan-10);
 
-    #groupSmallLog {
+    #groupSmallLog,
+    #headerLine {
         img {
             border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
     }
 
-    .contest-title-tab {
-        h2 {
-            a {
-                color: var(--cyan-2);
-                font-weight: bold;
-            }
+    .contest-title-tab span {
+        color: var(--gray-3);
+    }
 
-            a:hover {
-                color: var(--cyan-3);
-                text-decoration: none;
-            }
-
-            color: var(--gray-3);
+    .contest-title-tab h2,
+    #headerLine h1 {
+        a {
+            color: var(--cyan-2);
+            font-weight: bold;
         }
 
-        span {
-            color: var(--gray-3);
+        a:hover {
+            color: var(--cyan-3);
+            text-decoration: none;
         }
+
+        color: var(--gray-3);
     }
 
     /* 选项卡 */
@@ -324,4 +343,8 @@ button {
         background-color: var(--cyan-8);
         border-bottom: 2px solid var(--cyan-3);
     }
+}
+
+#footer {
+    display: none;
 }

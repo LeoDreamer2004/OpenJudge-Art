@@ -1,0 +1,117 @@
+@import "./global.css";
+
+/* 左侧导航栏 */
+#side.group-panel ul {
+    li {
+        display: block;
+        padding: 0.5em;
+        font-weight: bold;
+        border-bottom: 1px dotted var(--gray-7);
+        text-align: right;
+
+        a {
+            color: var(--cyan-3);
+            padding-right: 1em;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        &:hover {
+            background-color: var(--cyan-10);
+        }
+    }
+
+    li.current {
+        background-color: var(--cyan-9);
+    }
+}
+
+#main {
+    border: none;
+}
+
+/* 大标题 */
+
+#main.all-group h1 {
+    display: none;
+}
+
+#main.all-group h2 {
+    color: var(--cyan-3);
+    background: none;
+    background-color: var(--cyan-10);
+    padding: 0.2em;
+    padding-left: 0.5em;
+    border-left: 3px solid var(--cyan-4);
+    border-bottom: none;
+}
+
+#main.groups-category h1 {
+    color: var(--cyan-3);
+    background-color: var(--cyan-10);
+    padding: 0.2em;
+    padding-left: 0.5em;
+    border-left: 3px solid var(--cyan-4);
+}
+
+/* 小组列表 */
+#main.groups-category ul li {
+    background-color: var(--cyan-10);
+    border-radius: 5px;
+    margin-right: 0.3em;
+    border: 1px solid var(--cyan-9);
+    padding: 0.1em;
+
+    a {
+        color: var(--cyan-3);
+
+        &:hover {
+            color: var(--cyan-2);
+            text-decoration: none;
+        }
+    }
+
+    img {
+        border-radius: 5px;
+        height: 54px;
+        width: 54px;
+        margin-right: 0.5em;
+    }
+
+    &:hover {
+        background-color: var(--cyan-9);
+        transition: background-color 0.3s ease-in-out;
+    }
+}
+
+#main.all-group ul li {
+    display: inline-block;
+    margin: 0.5em;
+    padding-right: 0.5em;
+    background-color: var(--cyan-10);
+    border-radius: 5px;
+    border: 1px solid var(--cyan-9);
+    max-width: 230px;
+
+    a {
+        color: var(--cyan-3);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--cyan-2);
+            text-decoration: underline;
+        }
+    }
+
+    img {
+        border-radius: 5px;
+        margin-right: 0.5em;
+    }
+
+    &:hover {
+        background-color: var(--cyan-9);
+        transition: background-color 0.3s ease-in-out;
+    }
+}

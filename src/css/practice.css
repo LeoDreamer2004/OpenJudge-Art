@@ -3,11 +3,11 @@
 /* 问题描述 */
 .problem-page {
     max-width: 620px;
-    background-color: var(--gray-9);
+    background-color: var(--gray-10);
     padding: 1em;
     padding-top: 0;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 1em;
 
     dt {
@@ -52,7 +52,7 @@
 
 /* 信息栏 */
 .problem-statistics {
-    background-color: var(--gray-9);
+    background-color: var(--gray-10);
     padding: 1em;
     border-radius: 10px;
     margin: 0;

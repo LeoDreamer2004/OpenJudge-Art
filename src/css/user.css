@@ -1,5 +1,10 @@
 @import "./global.css";
 
+/* 顶部冗余信息 */
+#main .contest-wrapper,
+#main h1 {
+    display: none;
+}
 
 /* 用户信息 */
 .user-info table {
@@ -38,6 +43,11 @@
             border: none;
         }
     }
+
+    a {
+        color: var(--blue-3);
+        text-decoration: none;
+    }
 }
 
 /* 左侧提交栏 */
@@ -46,11 +56,10 @@
         display: block;
         padding: 0.5em;
         font-weight: bold;
-        border-bottom: 1px solid var(--gray-8);
+        border-bottom: 1px dotted var(--gray-7);
 
         &:hover {
             background-color: var(--cyan-10);
-            border-radius: 5px;
         }
     }
 
@@ -82,13 +91,48 @@
 }
 
 /* 参加比赛表格 */
-.my-contest-list a {
-    color: var(--cyan-3);
+.my-contest-list,
+.recently-submit {
+    border: none;
 }
 
 .my-group-contest-info {
     border-radius: 5px;
+    background-color: var(--cyan-10);
+
+    a {
+        color: var(--cyan-3);
+    }
+
     h3 {
         background-color: var(--cyan-9);
+    }
+}
+
+/* 小组设定 */
+.my-contest-list .user-group-info dl {
+    dt {
+        color: var(--cyan-3);
+        font-weight: bold;
+        width: 80px;
+    }
+
+    dd {
+        color: var(--cyan-2);
+        margin-bottom: 0.5em;
+    }
+}
+
+
+/* 小组链接 */
+.my-contest-list .my-group-logo {
+    img {
+        margin: 0.5em;
+        border-radius: 50%;
+    }
+
+    a {
+        color: var(--cyan-3);
+        text-decoration: none;
     }
 }

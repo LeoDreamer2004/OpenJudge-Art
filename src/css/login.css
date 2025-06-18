@@ -1,0 +1,98 @@
+@import "./global.css";
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+}
+
+#sitePagebody,
+#sitePagebody .wrapper,
+#main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: block;
+    max-width: 400px;
+    margin: 4em 0;
+}
+
+.user-login h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form dt label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    line-height: 2;
+}
+
+.form dd input[type="text"],
+.form dd input[type="password"] {
+    width: 100%;
+}
+
+.form dd {
+    margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+    width: 50%;
+    padding: 0.5rem;
+    margin: 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.login-message {
+    color: red;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.user-login p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.user-login a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.user-login a:hover {
+    text-decoration: underline;
+}
+
+.user-login>p:last-of-type {
+    display: none;
+}
