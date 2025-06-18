@@ -14,6 +14,8 @@ export default defineConfig({
         match: ['*://*.openjudge.cn/*'],
         connect: ['pku.edu.cn'],
         license: 'MIT',
+        updateURL: 'https://github.com/LeoDreamer2004/OpenJudge-Art/releases',
+        supportURL: 'https://github.com/LeoDreamer2004/OpenJudge-Art/issues',
         $extra: {
           'author-blog': 'https://LeoDreamer2004.github.io'
         }
