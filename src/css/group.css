@@ -56,78 +56,78 @@
     margin: 0;
     padding: 1em;
 
-    .group-name {
-        text-align: center;
+}
 
-        h1 {
-            display: inline;
-            float: none;
+#main .group-name {
+    text-align: center;
+
+    h1 {
+        display: inline;
+        float: none;
+        color: var(--blue-8);
+        border-bottom: 2px dotted var(--blue-8);
+    }
+
+    a {
+        background-color:
+            var(--blue-4);
+        border: none;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 0.3em 0.7em;
+        border-radius: 5px;
+        color: var(--blue-8);
+    }
+
+    a:hover {
+        background-color: var(--blue-5);
+        transition: all 0.5s;
+        text-decoration: none;
+    }
+}
+
+#main .main-content {
+    .current-contest h3,
+    .coming-contest h3,
+    .past-contest h3 {
+        padding: 0.5em;
+        border-left: 3px solid var(--blue-5);
+        border-bottom: none;
+        background-color: var(--blue-2);
+        color: var(--blue-7);
+
+        span {
             color: var(--blue-8);
-            border-bottom: 2px dotted var(--blue-8);
+            padding-right: 0.5em;
         }
 
         a {
-            background-color:
-                var(--blue-4);
-            border: none;
-            font-weight: bold;
-            font-size: 13px;
-            padding: 0.3em 0.7em;
-            border-radius: 5px;
             color: var(--blue-8);
-        }
-
-        a:hover {
-            background-color: var(--blue-5);
-            transition: all 0.5s;
             text-decoration: none;
         }
     }
 
-    .main-content {
+    .current-contest {
+        .over-time {
+            padding: 8px;
+            color: var(--orangered-7);
+        }
 
-        .current-contest h3,
-        .coming-contest h3,
-        .past-contest h3 {
-            padding: 0.5em;
-            border-left: 3px solid var(--blue-5);
-            border-bottom: none;
-            background-color: var(--blue-2);
-            color: var(--blue-7);
+        .recently-update {
+            display: none;
+        }
+    }
+
+    .past-contest ul.container,
+    .coming-contest ul.container {
+        li {
+            padding: 5px;
+            border-bottom: 1px solid var(--gray-4);
+            font-weight: bold;
 
             span {
-                color: var(--blue-8);
-                padding-right: 0.5em;
-            }
-
-            a {
-                color: var(--blue-8);
-                text-decoration: none;
-            }
-        }
-
-        .current-contest {
-            .over-time {
-                padding: 8px;
+                float: right;
                 color: var(--orangered-7);
-            }
-
-            .recently-update {
-                display: none;
-            }
-        }
-
-        .past-contest ul.container,
-        .coming-contest ul.container {
-            li {
-                padding: 5px;
-                border-bottom: 1px solid var(--gray-4);
-                font-weight: bold;
-
-                span {
-                    float: right;
-                    color: var(--orangered-7);
-                }
             }
         }
     }

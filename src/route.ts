@@ -1,69 +1,98 @@
-import globalStyles from './css/global.css?inline';
-import indexStyles from './css/index.css?inline';
-import loginStyles from './css/login.css?inline';
-import settingsStyles from './css/settings.css?inline';
-import groupsStyles from './css/groups.css?inline';
-import groupStyles from './css/group.css?inline';
-import matchStyles from './css/match.css?inline';
-import rankingStyles from './css/ranking.css?inline';
-import practiceStyles from './css/practice.css?inline';
-import submitStyles from './css/submit.css?inline';
-import statisticsStyles from './css/statistics.css?inline';
-import userStyles from './css/user.css?inline';
+class Route {
+    constructor(
+        private pattern: RegExp,
+        private css: string = '',
+        private css_name: string = '',
+        private tweaks: (() => void)[] = []
+    ) {
+    }
 
-const url = window.location.href;
+    public bindCss(css: string, css_name: string) {
+        this.css = css;
+        this.css_name = css_name;
+    }
 
-function injectCss(css: string) {
-    var style = document.createElement('style');
-    style.textContent = css;
-    style.dataset.author = 'LeoDreamer';
-    style.id = 'OpenJudge-Art';
+    public addTweak(tweak: () => void) {
+        this.tweaks.push(tweak);
+    }
 
-    if (document.head) {
-        document.head.appendChild(style);
-    } else {
-        // Wait for the head to load
-        document.addEventListener('DOMContentLoaded', () => {
+    public matches(url: string): boolean {
+        return this.pattern.test(url);
+    }
+
+    public apply(): void {
+        for (const tweak of this.tweaks) {
+            tweak();
+        }
+
+        if (this.css) {
+            this.injectCss();
+            console.log(`openjudge ${this.css_name} styles loaded`);
+        }
+    }
+
+    private injectCss() {
+        var style = document.createElement('style');
+        style.textContent = this.css;
+        style.dataset.author = 'LeoDreamer';
+        style.id = 'OpenJudge-Art';
+
+        if (document.head) {
             document.head.appendChild(style);
-        });
+        } else {
+            // Wait for the head to load
+            document.addEventListener('DOMContentLoaded', () => {
+                document.head.appendChild(style);
+            });
+        }
     }
 }
 
-if (url == "http://openjudge.cn/") {
-    injectCss(indexStyles);
-    console.log('openjudge index styles loaded');
-} else if (/^http:\/\/.*openjudge.cn\/auth\/login\/$/.test(url)) {
-    injectCss(loginStyles);
-    console.log('openjudge login styles loaded');
-} else if (/^http:\/\/openjudge.cn\/settings.*$/.test(url)) {
-    injectCss(settingsStyles);
-    console.log('openjudge settings styles loaded');
-} else if (/^http:\/\/openjudge.cn\/groups.*$/.test(url)) {
-    injectCss(groupsStyles);
-    console.log('openjudge groups styles loaded');
-} else if (/^http:\/\/.*\.openjudge\.cn\/$/.test(url)) {
-    injectCss(groupStyles);
-    console.log('openjudge group styles loaded');
-} else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/$/.test(url)) {
-    injectCss(matchStyles);
-    console.log('openjudge match styles loaded');
-} else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/ranking\/$/.test(url)) {
-    injectCss(rankingStyles);
-    console.log('openjudge ranking styles loaded');
-} else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/$/.test(url)) {
-    injectCss(practiceStyles);
-    console.log('openjudge practice styles loaded');
-} else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/submit\/$/.test(url)) {
-    injectCss(submitStyles);
-    console.log('openjudge submit styles loaded');
-} else if (/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/statistics\/$/.test(url)) {
-    injectCss(statisticsStyles);
-    console.log('openjudge statistics styles loaded');
-} else if (/^http:\/\/openjudge\.cn\/user\/.*/.test(url)) {
-    injectCss(userStyles);
-    console.log('openjudge user styles loaded');
-} else {
-    console.log(url);
-    injectCss(globalStyles);
-    console.log('openjudge global styles loaded');
-}
+const INDEX_ROUTE = new Route(/^http:\/\/openjudge.cn\/$/);
+const LOGIN_ROUTE = new Route(/^http:\/\/.*openjudge.cn\/auth\/login\/$/);
+const SETTINGS_ROUTE = new Route(/^http:\/\/openjudge.cn\/settings.*$/);
+const GROUPS_ROUTE = new Route(/^http:\/\/openjudge.cn\/groups.*$/);
+const MESSAGES_ROUTE = new Route(/^http:\/\/openjudge.cn\/messages\/$/);
+const GROUP_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/$/);
+const MATCH_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/$/);
+const RANKING_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/ranking\/$/);
+const PRACTICE_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/$/);
+const SUBMIT_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/submit\/$/);
+const STATISTICS_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/statistics\//);
+const USER_ROUTE = new Route(/^http:\/\/openjudge\.cn\/user\//);
+const GLOBAL_ROUTE = new Route(/^http:\/\/.*openjudge\.cn\//);
+
+const routes: Route[] = [
+    INDEX_ROUTE,
+    LOGIN_ROUTE,
+    SETTINGS_ROUTE,
+    GROUPS_ROUTE,
+    MESSAGES_ROUTE,
+    GROUP_ROUTE,
+    MATCH_ROUTE,
+    RANKING_ROUTE,
+    PRACTICE_ROUTE,
+    SUBMIT_ROUTE,
+    STATISTICS_ROUTE,
+    USER_ROUTE,
+    GLOBAL_ROUTE
+]
+
+// export the routes for use in other modules
+export {
+    Route,
+    INDEX_ROUTE,
+    LOGIN_ROUTE,
+    SETTINGS_ROUTE,
+    GROUPS_ROUTE,
+    MESSAGES_ROUTE,
+    GROUP_ROUTE,
+    MATCH_ROUTE,
+    RANKING_ROUTE,
+    PRACTICE_ROUTE,
+    SUBMIT_ROUTE,
+    STATISTICS_ROUTE,
+    USER_ROUTE,
+    GLOBAL_ROUTE,
+    routes,
+};

@@ -1,5 +1,11 @@
 @import "./global.css";
 
+input[type="text"],
+input[type="password"],
+textarea {
+    border: 1px solid var(--gray-3) !important;
+}
+
 /* 左侧导航栏 */
 ul#navigation {
     li {

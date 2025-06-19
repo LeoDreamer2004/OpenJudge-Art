@@ -1,0 +1,13 @@
+@import "./global.css";
+
+
+.nav-tabs .navi-menu#navigation {
+    li {
+        background-color: var(--gray-2);
+        text-align: center;
+        padding: 0.5em 0;
+        a {
+            font-weight: bold;
+        }
+    }
+}

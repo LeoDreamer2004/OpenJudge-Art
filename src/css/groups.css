@@ -67,12 +67,22 @@
     border: 1px solid var(--cyan-3);
     padding: 0.1em;
 
-    a {
-        color: var(--cyan-8);
+    .info {
+        a {
+            color: var(--cyan-8);
+        }
 
-        &:hover {
+        a:hover {
             color: var(--cyan-9);
             text-decoration: none;
+        }
+
+        span {
+            color: var(--gray-7);
+        }
+
+        p {
+            color: var(--gray-6);
         }
     }
 

@@ -16,6 +16,7 @@
     padding: 1em;
     background-color: var(--gray-2);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    border: none;
 
     .avatar-image img {
         border-radius: 10%;
@@ -55,8 +56,14 @@
     }
 }
 
+.user-group h2,
+.my-group-contest h2 {
+    border: none;
+}
+
 /* 左侧提交栏 */
-.my-group-list ul {
+.user-group .my-group-list ul,
+.my-group-contest .my-group-list ul {
     li {
         display: block;
         padding: 0.5em;
@@ -89,6 +96,8 @@
 
 /* 最近题提交表格 */
 .recently-submit table {
+    margin-top: 0;
+
     .contest img {
         border-radius: 50%;
         margin-right: 0.5em;
