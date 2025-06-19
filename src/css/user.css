@@ -112,15 +112,15 @@
 
 .my-group-contest-info {
     border-radius: 5px;
-    border: 1px solid var(--cyan-3);
-    background-color: var(--cyan-1);
+    border: 1px solid var(--cyan-2);
+    background-color: var(--gray-2);
 
     a {
         color: var(--cyan-7);
     }
 
     h3 {
-        background-color: var(--cyan-2);
+        background-color: var(--cyan-1);
     }
 }
 
