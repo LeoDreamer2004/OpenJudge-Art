@@ -15,10 +15,10 @@ h6,
 
 a {
     color: var(--blue-8);
-}
 
-a:hover {
-    color: var(--blue-9);
+    &:hover {
+        color: var(--blue-9);
+    }
 }
 
 table {
@@ -49,8 +49,10 @@ table {
         }
     }
 
-    tbody, tfoot {
+    tbody,
+    tfoot {
         tr {
+
             td,
             th {
                 border-bottom: 1px dotted var(--gray-4) !important;
@@ -59,6 +61,7 @@ table {
         }
 
         tr:last-child {
+
             td,
             th {
                 border-bottom: none !important;
@@ -169,14 +172,19 @@ button {
     margin-bottom: 1em;
 }
 
-#siteBody {
+/* 背景 */
+#siteBody,
+#pageBody {
     background: none;
+    background-color: var(--gray-1);
 }
 
-/* 背景 */
-html,
-#pagebody {
-    background: var(--gray-1) !important;
+body {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--gray-1);
+    padding-bottom: 20px;
 }
 
 /* 顶栏 */
@@ -460,6 +468,10 @@ html,
 }
 
 /* 题目结果 */
+.result-pending {
+    color: var(--gray-7) !important;
+}
+
 .result-right {
     color: var(--blue-6) !important;
 }

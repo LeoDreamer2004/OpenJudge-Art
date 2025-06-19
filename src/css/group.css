@@ -32,6 +32,10 @@
     .admin-list,
     .announcement {
         border: none;
+
+        span abbr.date {
+            text-decoration: none;
+        }
     }
 
     .group-description,

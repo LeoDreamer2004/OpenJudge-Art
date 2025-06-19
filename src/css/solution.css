@@ -1,0 +1,123 @@
+@import "./global.css";
+@import "./problem-evaluate.css";
+
+/* 提交状态 */
+.submitStatus,
+.compile-info {
+    background-color: var(--gray-2);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-3);
+}
+
+.submitStatus {
+    max-width: 610px;
+
+    h3,
+    pre {
+        margin: 1em;
+        font-size: 14px;
+        color: var(--gray-8);
+    }
+
+    pre {
+        background-color: var(--gray-1) !important;
+    }
+}
+
+
+/* 状态标题栏 */
+.submitStatus a.result-pending,
+.submitStatus a.result-right,
+.submitStatus a.result-wrong,
+.submitStatus a.result-ce {
+    font-size: 17px;
+    font-weight: bold;
+    float: none;
+    display: block;
+    padding: 0.5em 1em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.submitStatus a.result-pending {
+    background-color: var(--gray-3);
+    border-bottom: 1px solid var(--gray-4);
+}
+
+.submitStatus a.result-right {
+    background-color: var(--blue-1);
+    border-bottom: 1px solid var(--blue-3);
+}
+
+.submitStatus a.result-wrong {
+    background-color: var(--red-1);
+    border-bottom: 1px solid var(--red-3);
+}
+
+.submitStatus a.result-ce {
+    background-color: var(--green-1);
+    border-bottom: 1px solid var(--green-3);
+}
+
+/* 基本信息栏 */
+#side .compile-info {
+    padding: 1em;
+
+    h3,
+    div h4 {
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--blue-6);
+        margin: 0;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 2px dashed var(--blue-4);
+    }
+
+    dl {
+        dt {
+            color: var(--blue-6);
+            font-weight: bold;
+            margin-bottom: 0.2em;
+        }
+
+        dd {
+            color: var(--gray-8);
+            margin-bottom: 0.2em;
+        }
+    }
+
+    ul li {
+        padding-top: 0.3em;
+    }
+}
+
+/* 源代码高亮 */
+pre.sh_sourceCode {
+    .sh_symbol {
+        color: var(--blue-6);
+    }
+
+    .sh_string {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--orangered-6);
+    }
+
+    .sh_comment {
+        color: var(--gray-6);
+    }
+
+    .sh_keyword {
+        color: var(--purple-6);
+    }
+
+    .sh_function {
+        color: var(--gold-7);
+    }
+
+    .sh_number {
+        color: var(--lime-8);
+    }
+}

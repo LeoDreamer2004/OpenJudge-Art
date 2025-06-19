@@ -1,4 +1,9 @@
-@import "./login.css";  /* 提交界面可能跳转到登录 */
+@import "./login.css";
+
+/* 未登录 */
+#main .notice {
+    top: 20px;
+}
 
 #submit p {
     display: none;
@@ -40,6 +45,7 @@
         height: 300px;
         min-width: 630px;
         outline: none;
+        background-color: var(--gray-3);
         color: var(--gray-9);
         border: 1px solid var(--gray-6);
         border-radius: 5px;
@@ -51,7 +57,7 @@
     /* 提交按钮 */
 
     button {
-        margin-right: 1em;
+        margin: 0 0.5em;
         font-size: 12px;
     }
 }

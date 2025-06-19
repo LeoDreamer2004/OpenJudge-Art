@@ -1,0 +1,113 @@
+/* 评价此题 */
+button#create-rating {
+    background: none;
+    background-color: var(--cyan-4);
+    color: var(--white);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover {
+        background-color: var(--cyan-3);
+        transition: background-color 0.3s ease-in-out;
+    }
+}
+
+/* 评价对话框 */
+div[role="dialog"] {
+    padding: 0.5em;
+    background: none;
+    background-color: var(--gray-1);
+
+    .ui-dialog-titlebar {
+        background: none;
+        background-color: var(--gray-2);
+        border: none;
+        border-bottom: 1px solid var(--gray-3);
+    }
+
+    /* 难度评价 */
+    form .rating {
+        padding: 0.5em;
+        border-bottom: 1px solid var(--gray-3);
+    }
+
+    /* 标签 */
+    form ul.interest_form {
+        padding: 0.3em 0;
+
+        li {
+            padding: 0.5em;
+        }
+
+        li:first-child {
+            padding-bottom: 0;
+        }
+
+        li dl {
+            dt {
+                color: var(--gray-8);
+                padding-bottom: 0.5em;
+            }
+
+            dd span {
+                border-radius: 3px;
+                background-color: var(--lime-2);
+                color: var(--lime-8);
+                border: none;
+                transition: all 0.3s ease-in-out;
+            }
+
+            dd span.rdact {
+                color: var(--gray-8);
+                background-color: var(--gray-3);
+            }
+        }
+    }
+
+    /* 对话框底部 */
+    .ui-dialog-buttonpane {
+        padding: 0 0.5em;
+        margin: 0;
+        border-top: 1px solid var(--gray-3);
+        background: none;
+        background-color: var(--gray-1);
+
+        button {
+            background: none;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease-in-out;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        /* 保存 */
+        button:first-child {
+            background-color: var(--blue-3);
+            color: var(--blue-9);
+
+            &:hover {
+                background-color: var(--blue-4);
+            }
+        }
+
+        /* 取消 */
+        button:last-child {
+            background-color: var(--gray-3);
+            color: var(--gray-9);
+
+            &:hover {
+                background-color: var(--gray-4);
+            }
+        }
+    }
+}

@@ -52,12 +52,15 @@ const INDEX_ROUTE = new Route(/^http:\/\/openjudge.cn\/$/);
 const LOGIN_ROUTE = new Route(/^http:\/\/.*openjudge.cn\/auth\/login\/$/);
 const SETTINGS_ROUTE = new Route(/^http:\/\/openjudge.cn\/settings.*$/);
 const GROUPS_ROUTE = new Route(/^http:\/\/openjudge.cn\/groups.*$/);
+const CONTESTS_RUNNING_ROUTE = new Route(/^http:\/\/openjudge.cn\/contests\/running$/);
 const MESSAGES_ROUTE = new Route(/^http:\/\/openjudge.cn\/messages\/$/);
 const GROUP_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/$/);
 const MATCH_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/$/);
 const RANKING_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/ranking\/$/);
+const HINT_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/hint\//);
 const PRACTICE_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/$/);
 const SUBMIT_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/submit\/$/);
+const SOLUTION_RUOTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/solution\//);
 const STATISTICS_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/statistics\//);
 const USER_ROUTE = new Route(/^http:\/\/openjudge\.cn\/user\//);
 const GLOBAL_ROUTE = new Route(/^http:\/\/.*openjudge\.cn\//);
@@ -67,12 +70,15 @@ const routes: Route[] = [
     LOGIN_ROUTE,
     SETTINGS_ROUTE,
     GROUPS_ROUTE,
+    CONTESTS_RUNNING_ROUTE,
     MESSAGES_ROUTE,
     GROUP_ROUTE,
     MATCH_ROUTE,
     RANKING_ROUTE,
+    HINT_ROUTE,
     PRACTICE_ROUTE,
     SUBMIT_ROUTE,
+    SOLUTION_RUOTE,
     STATISTICS_ROUTE,
     USER_ROUTE,
     GLOBAL_ROUTE
@@ -85,12 +91,15 @@ export {
     LOGIN_ROUTE,
     SETTINGS_ROUTE,
     GROUPS_ROUTE,
+    CONTESTS_RUNNING_ROUTE,
     MESSAGES_ROUTE,
     GROUP_ROUTE,
     MATCH_ROUTE,
     RANKING_ROUTE,
+    HINT_ROUTE,
     PRACTICE_ROUTE,
     SUBMIT_ROUTE,
+    SOLUTION_RUOTE,
     STATISTICS_ROUTE,
     USER_ROUTE,
     GLOBAL_ROUTE,

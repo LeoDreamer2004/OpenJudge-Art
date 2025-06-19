@@ -1,4 +1,4 @@
-import { INDEX_ROUTE, PRACTICE_ROUTE } from "./route";
+import { INDEX_ROUTE, PRACTICE_ROUTE, SOLUTION_RUOTE } from "./route";
 
 function moveTitleToWrapper() {
     const main = document.querySelector('#main');
@@ -92,3 +92,39 @@ function removeStyleOfPracticeDescription() {
     }
 }
 PRACTICE_ROUTE.addTweak(removeStyleOfPracticeDescription);
+
+function practiceSubmitStatusTitleTweak() {
+    const main = document.querySelector('.submitStatus');
+    if (!main) {
+        console.error('Main element not found');
+        return;
+    }
+    const statusTitle = main.querySelector('.compile-status');
+    if (!statusTitle) {
+        console.error('Status title element not found');
+        return;
+    }
+    const statusAnchor = statusTitle.querySelector('a');
+    if (!statusAnchor) {
+        console.error('Status element not found');
+        return;
+    }
+    main.insertBefore(statusAnchor, main.firstChild);
+    statusTitle.remove();
+}
+SOLUTION_RUOTE.addTweak(practiceSubmitStatusTitleTweak);
+
+function moveRelatedProblemsToInfomation() {
+    const infomation = document.querySelector('#side .compile-info');
+
+    const ratingButton = document.querySelector('button#create-rating');
+    const relatedProblems = document.querySelector('#pagebody .wrapper > div:last-child');
+
+    if (infomation && ratingButton) {
+        infomation.appendChild(ratingButton);
+    }
+    if (infomation && relatedProblems) {
+        infomation.appendChild(relatedProblems);
+    }
+}
+SOLUTION_RUOTE.addTweak(moveRelatedProblemsToInfomation);

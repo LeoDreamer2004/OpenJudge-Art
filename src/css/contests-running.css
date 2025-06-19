@@ -1,0 +1,39 @@
+@import "./global.css";
+
+/* 比赛表格 */
+.contest-intro {
+    &>div:nth-child(even) {
+        background-color: var(--gray-2);
+    }
+
+    h1 {
+        color: var(--blue-7);
+        border-left: 3px solid var(--blue-5);
+        padding-left: 0.5em;
+    }
+}
+
+/* 比赛表项 */
+.contest-intro .contContainer {
+    margin: 0;
+    border-bottom: 1px solid var(--gray-4);
+
+    .groupLogo {
+        border: none;
+        padding-top: 20px;
+    }
+
+    img {
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    .statsBox .number {
+        text-shadow: none;
+    }
+}

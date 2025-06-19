@@ -11,11 +11,10 @@ body {
     margin: 0;
 }
 
-#sitePagebody,
-#pagebody,
 #sitePagebody .wrapper,
 #pagebody .wrapper,
-#main {
+#sitePagebody .wrapper #main.col-8,
+#pagebody .wrapper #main.col-8 {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -31,8 +30,8 @@ body {
 
 /* 可能存在的提示信息 */
 #main .notice {
+    top: 0px;
     position: absolute;
-    top: 25px;
     display: flex;
     text-align: center;
     animation: swingInFromLeft 0.3s ease-in-out;
@@ -46,7 +45,7 @@ body {
 }
 
 
-#main form {
+#main form[action="/api/auth/login/"] {
     background: var(--gray-2);
     padding: 2rem;
     border-radius: 10px;
@@ -98,12 +97,6 @@ body {
     &:hover {
         background-color: #0056b3;
     }
-}
-
-.login-message {
-    color: red;
-    margin-bottom: 1rem;
-    text-align: center;
 }
 
 .user-login p {

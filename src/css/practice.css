@@ -1,4 +1,5 @@
 @import "./global.css";
+@import "./problem-evaluate.css";
 
 /* 问题描述 */
 .problem-page {
@@ -26,10 +27,10 @@
     pre .copy-button {
         position: absolute;
         right: 1em;
-        top: 0.7em;
+        top: 0.5em;
         color: var(--blue-9);
         background-color: var(--gray-2);
-        padding: 0.2em 0.5em;
+        padding: 0.4em 0.6em;
         font-size: 10px;
         border-radius: 3px;
         cursor: pointer;
@@ -84,12 +85,12 @@
 
     dl {
         dt {
-            color: var(--cyan-6);
+            color: var(--cyan-5);
             font-weight: bold;
         }
 
         dd {
-            color: var(--cyan-7);
+            color: var(--cyan-8);
             margin-bottom: 0.5em;
         }
     }
