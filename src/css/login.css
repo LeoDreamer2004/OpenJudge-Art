@@ -1,9 +1,14 @@
 @import "./global.css";
+@import "./animation.css";
+
+html {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f6f8;
 }
 
 #sitePagebody,
@@ -23,6 +28,23 @@ body {
     align-items: center;
     height: 100vh;
 }
+
+/* 可能存在的提示信息 */
+#main .notice {
+    position: absolute;
+    top: 25px;
+    display: flex;
+    text-align: center;
+    animation: swingInFromLeft 0.3s ease-in-out;
+
+    p {
+        border: 1px solid var(--yellow-3);
+        border-radius: 5px;
+        background: var(--yellow-2);
+        color: var(--yellow-7);
+    }
+}
+
 
 #main form {
     background: var(--gray-2);
@@ -61,9 +83,10 @@ body {
 }
 
 .user-login button[type="submit"] {
-    width: 50%;
+    width: 40%;
     padding: 0.5rem;
     margin: 1em;
+    margin-left: 2em;
     background-color: #007bff;
     color: white;
     border: none;
@@ -92,10 +115,10 @@ body {
     color: #007bff;
     font-size: 15px;
     text-decoration: none;
-}
 
-.user-login a:hover {
-    text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .user-login>p:last-of-type {

@@ -1,1 +1,6 @@
 @import "./global.css";
+
+#rankingList table tr td a img {
+    margin: 0.2em 0.5em;
+    border-radius: 2px;
+}

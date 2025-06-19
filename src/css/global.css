@@ -29,7 +29,7 @@ table {
     margin-bottom: 1em;
 
     thead tr {
-        background-color: var(--gray-2) !important;
+        background-color: var(--cyan-1) !important;
 
         td,
         th {
@@ -49,7 +49,7 @@ table {
         }
     }
 
-    tbody {
+    tbody, tfoot {
         tr {
             td,
             th {
@@ -85,15 +85,14 @@ table {
     tr td:not(.result) a {
         color: var(--cyan-8);
     }
-}
 
-/* @media (prefers-color-scheme: dark) {
-    table {
-        tr:nth-child(odd) {
-            background-color: var(--gray-2);
-        }
+    tfoot tr td,
+    tfoot tr th {
+        background-color: var(--cyan-1) !important;
+        border-top: 1px solid var(--gray-4) !important;
+        font-weight: bold;
     }
-} */
+}
 
 pre {
     background-color: var(--gray-1);
@@ -253,7 +252,6 @@ html,
 /* 小顶栏用户框 */
 #headerTop .wrapper #userToolbar {
     margin: 5px;
-    border-radius: 5px;
 
     a {
         color: var(--gray-7);
@@ -264,18 +262,17 @@ html,
         background-color: var(--gray-3);
         text-decoration: none;
     }
-
-
 }
 
 /* 折叠用户菜单 */
 #headerTop .wrapper #userToolbar .account-link {
     a.w_arr_down {
         color: var(--gray-7);
+        background: none;
         background-color: var(--gray-2);
     }
 
-    .account-list {
+    .account-list.dis {
         border-radius: 5px;
         border: none;
         background: none;
@@ -390,13 +387,18 @@ html,
     }
 }
 
+#pageTitle {
+    border: none;
+    margin-bottom: 0.5em;
+}
+
 /* 题目小顶栏 */
 #pageTitle h2 {
     font-size: 1.5em;
     color: var(--cyan-8);
     padding: 0.5em;
-    background-color: var(--cyan-2);
-    border: 1px solid var(--cyan-3);
+    background-color: var(--cyan-1);
+    border: 1px solid var(--cyan-2);
     border-radius: 5px;
 }
 

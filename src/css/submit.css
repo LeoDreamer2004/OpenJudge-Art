@@ -1,4 +1,4 @@
-@import "./global.css";
+@import "./login.css";  /* 提交界面可能跳转到登录 */
 
 #submit p {
     display: none;
