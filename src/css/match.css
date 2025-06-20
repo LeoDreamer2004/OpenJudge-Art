@@ -1,7 +1,7 @@
 @import "./global.css";
 
 :root {
-    --contest-width: 600px;
+    --contest-width: 800px;
 }
 
 .timeBar {
@@ -16,7 +16,7 @@
         .current-time {
             color: var(--orangered-7);
             font-size: 1.5em;
-            left: 225px;
+            left: 325px;
             top: -65px;
         }
 
@@ -46,17 +46,17 @@
 
         .current-time-dd {
             color: var(--red-5);
-            left: 270px;
+            left: 370px;
             top: -px;
         }
 
         .end-time-dd {
-            left: 400px;
+            left: 600px;
             top: -7px;
         }
 
         .end-time {
-            left: 450px;
+            left: 650px;
             top: 37px;
         }
 
@@ -72,4 +72,33 @@
 .contest-problem table {
     width: var(--contest-width);
     margin-top: 1em;
+}
+
+/* 可能存在的通知 */
+.contest-description .notification {
+    background-color: var(--red-1);
+    color: var(--red-9);
+    padding: 0.5em;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#side {
+    display: none;
+}
+
+#pagebody,
+#pagebody .wrapper,
+#pagebody .wrapper #main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main {
+    padding: 0;
+    margin: 0;
+    float: none;
 }

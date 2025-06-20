@@ -185,12 +185,6 @@
         margin-top: 0.5em;
         color: var(--gray-8);
 
-        .date .date {
-            color: var(--gray-6);
-            font-size: 0.9em;
-            text-decoration: dotted 1px var(--gray-6);
-        }
-
         a {
             color: var(--blue-7);
             text-decoration: none;

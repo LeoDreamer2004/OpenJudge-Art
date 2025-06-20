@@ -10,6 +10,7 @@ h4,
 h5,
 h6,
 * {
+    scrollbar-color: var(--gray-3) var(--gray-2);
     color: var(--gray-10);
 }
 
@@ -55,6 +56,16 @@ table {
 
             td,
             th {
+
+                /* 两端的格子圆角 */
+                &:first-child {
+                    border-top-left-radius: 5px;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 5px;
+                }
+
                 border-bottom: 1px dotted var(--gray-4) !important;
                 padding: 0.2em 0.5em !important;
             }
@@ -137,7 +148,9 @@ textarea {
 }
 
 input[type="radio"]:hover,
-input[type="radio"]:focus {
+input[type="radio"]:focus,
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus {
     border: none;
     box-shadow: none;
 }
@@ -481,5 +494,11 @@ body {
 }
 
 .result-ce {
-    color: var(--green-6) !important;
+    color: var(--gold-6) !important;
+}
+
+/* 日期 */
+abbr.date {
+    color: var(--gray-6);
+    text-decoration: none;
 }

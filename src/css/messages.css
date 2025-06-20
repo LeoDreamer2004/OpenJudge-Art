@@ -1,13 +1,87 @@
 @import "./global.css";
 
 
-.nav-tabs .navi-menu#navigation {
+.navi-menu#navigation {
     li {
         background-color: var(--gray-2);
         text-align: center;
         padding: 0.5em 0;
+
         a {
             font-weight: bold;
         }
+    }
+}
+
+.messages table tbody tr td {
+    img {
+        border-radius: 50%;
+        margin: 0.5em;
+    }
+
+    a.message-del {
+        color: var(--red-6);
+        padding-right: 1em;
+
+        &:hover {
+            color: var(--red-5);
+        }
+    }
+}
+
+.messages table tbody tr td.subject {
+    h4 a {
+        color: var(--blue-8);
+        font-weight: bold;
+        margin: 0.5em 0;
+    }
+}
+
+/* 对话标题 */
+.messagesDialog h2 {
+    color: var(--blue-8);
+    background-color: var(--blue-1);
+    font-size: 17px;
+    border: none;
+    border-left: 5px solid var(--blue-6);
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+}
+
+/* 参与者 */
+.messagesDialog>p {
+    display: none;
+}
+
+/* 对话项 */
+.messagesDialog ol li {
+    border-bottom: 1px solid var(--gray-3);
+    padding: 0.4em 0;
+    margin: 0;
+
+    .author-image img {
+        border-radius: 50%;
+        margin-right: 0.5em;
+    }
+
+    .post-info {
+        background-color: var(--gray-2);
+        border-radius: 5px;
+        padding: 0.5em;
+    }
+
+    .post {
+        border-bottom: none;
+    }
+}
+
+/* 回复框 */
+.messagesDialog .reply-box form {
+    textarea {
+        margin-top: 1em;
+        min-width: 600px;
+    }
+    button {
+        margin-top: 1em;
     }
 }

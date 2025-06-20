@@ -1,4 +1,4 @@
-import { INDEX_ROUTE, PRACTICE_ROUTE, SOLUTION_RUOTE } from "./route";
+import { INDEX_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, SOLUTION_RUOTE } from "./route";
 
 function moveTitleToWrapper() {
     const main = document.querySelector('#main');
@@ -80,7 +80,6 @@ PRACTICE_ROUTE.addTweak(addCopyButtonOnSampleCode);
 
 function removeStyleOfPracticeDescription() {
     const description = document.querySelector('.problem-page .problem-content dd p');
-    console.log('description :>> ', description);
     // remove all style attributes from the description
     if (description) {
         description.removeAttribute('style');
@@ -118,13 +117,25 @@ function moveRelatedProblemsToInfomation() {
     const infomation = document.querySelector('#side .compile-info');
 
     const ratingButton = document.querySelector('button#create-rating');
-    const relatedProblems = document.querySelector('#pagebody .wrapper > div:last-child');
+    const relatedProblems = document.querySelector('#pagebody .wrapper > div:last-child:not(#side)');
 
     if (infomation && ratingButton) {
         infomation.appendChild(ratingButton);
     }
     if (infomation && relatedProblems) {
+        console.log('relatedProblems :>> ', relatedProblems);
         infomation.appendChild(relatedProblems);
     }
 }
 SOLUTION_RUOTE.addTweak(moveRelatedProblemsToInfomation);
+
+function moveNotificationToContestDescription() {
+    const description = document.querySelector('#main .contest-description');
+    const notification = document.querySelector('#side .notification');
+    console.log('notification :>> ', description);
+    if (description && notification) {
+        description.insertBefore(notification, description.firstChild);
+    }
+}
+MATCH_ROUTE.addTweak(moveNotificationToContestDescription);
+

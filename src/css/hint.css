@@ -14,11 +14,6 @@
             color: var(--orangered-6);
         }
     }
-
-    /* 日期 */
-    span abbr.date {
-        color: var(--gray-6);
-    }
 }
 
 #clarify table tbody tr {

@@ -95,6 +95,11 @@
         }
     }
 
+    .notification {
+        color: var(--red-6);
+        margin-bottom: 1em;
+    }
+
     h4 {
         color: var(--cyan-6);
         font-weight: bold;

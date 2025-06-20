@@ -56,8 +56,8 @@
 }
 
 .submitStatus a.result-ce {
-    background-color: var(--green-1);
-    border-bottom: 1px solid var(--green-3);
+    background-color: var(--gold-1);
+    border-bottom: 1px solid var(--gold-3);
 }
 
 /* 基本信息栏 */
@@ -119,5 +119,9 @@ pre.sh_sourceCode {
 
     .sh_number {
         color: var(--lime-8);
+    }
+
+    .sh_preproc {
+        color: var(--green-6);
     }
 }
