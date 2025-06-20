@@ -6,11 +6,11 @@
         display: block;
         padding: 0.5em;
         font-weight: bold;
-        border-bottom: 1px dotted var(--gray-3);
+        border-bottom: 1px dotted var(--card-border);
         text-align: right;
 
         a {
-            color: var(--cyan-8);
+            color: var(--accent-1-text);
             padding-right: 1em;
 
             &:hover {
@@ -19,12 +19,12 @@
         }
 
         &:hover {
-            background-color: var(--cyan-2);
+            background-color: var(--accent-1-bg);
         }
     }
 
     li.current {
-        background-color: var(--cyan-2);
+        background-color: var(--accent-1-bg-dark);
     }
 }
 
@@ -39,11 +39,11 @@
 }
 
 #main.all-group h2 {
-    color: var(--cyan-8);
+    color: var(--accent-1-text);
     background: none;
-    background-color: var(--cyan-2);
+    background-color: var(--accent-1-bg-dark);
     padding: 0.5em;
-    border-left: 3px solid var(--cyan-7);
+    border-left: 3px solid var(--accent-1-text);
     border-bottom: none;
 
     span {
@@ -52,28 +52,28 @@
 }
 
 #main.groups-category h1 {
-    color: var(--cyan-8);
-    background-color: var(--cyan-2);
+    color: var(--accent-1-text);
+    background-color: var(--accent-1-bg-dark);
     padding: 0.2em;
     padding-left: 0.5em;
-    border-left: 3px solid var(--cyan-7);
+    border-left: 3px solid var(--accent-1-text);
 }
 
 /* 小组列表 */
 #main.groups-category ul li {
-    background-color: var(--cyan-1);
+    background-color: var(--accent-1-bg);
     border-radius: 5px;
     margin-right: 0.3em;
-    border: 1px solid var(--cyan-3);
+    border: 1px solid var(--accent-1-border-dark);
     padding: 0.1em;
 
     .info {
         a {
-            color: var(--cyan-8);
+            color: var(--accent-1-text);
         }
 
         a:hover {
-            color: var(--cyan-9);
+            color: var(--accent-1-text-dark);
             text-decoration: none;
         }
 
@@ -94,7 +94,7 @@
     }
 
     &:hover {
-        background-color: var(--cyan-3);
+        background-color: var(--accent-1-bg-dark);
         transition: background-color 0.3s ease-in-out;
     }
 }
@@ -103,17 +103,17 @@
     display: inline-block;
     margin: 0.5em;
     padding-right: 0.5em;
-    background-color: var(--cyan-1);
+    background-color: var(--accent-1-bg);
     border-radius: 5px;
-    border: 1px solid var(--cyan-2);
+    border: 1px solid var(--accent-1-border);
     max-width: 230px;
 
     a {
-        color: var(--cyan-8);
+        color: var(--accent-1-text);
         text-decoration: none;
 
         &:hover {
-            color: var(--cyan-9);
+            color: var(--accent-1-text-dark);
             text-decoration: underline;
         }
     }
@@ -124,7 +124,7 @@
     }
 
     &:hover {
-        background-color: var(--cyan-3);
+        background-color: var(--accent-1-bg-dark);
         transition: background-color 0.3s ease-in-out;
     }
 }

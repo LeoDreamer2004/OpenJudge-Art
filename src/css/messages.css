@@ -3,7 +3,7 @@
 
 .navi-menu#navigation {
     li {
-        background-color: var(--gray-2);
+        background-color: var(--card-bg);
         text-align: center;
         padding: 0.5em 0;
 
@@ -31,7 +31,7 @@
 
 .messages table tbody tr td.subject {
     h4 a {
-        color: var(--blue-8);
+        color: var(--accent-2-text);
         font-weight: bold;
         margin: 0.5em 0;
     }
@@ -39,11 +39,11 @@
 
 /* 对话标题 */
 .messagesDialog h2 {
-    color: var(--blue-8);
-    background-color: var(--blue-1);
+    color: var(--accent-2-text);
+    background-color: var(--accent-2-bg);
     font-size: 17px;
     border: none;
-    border-left: 5px solid var(--blue-6);
+    border-left: 5px solid var(--accent-2-text-light);
     padding: 0.5em 1em;
     margin-bottom: 1em;
 }
@@ -55,7 +55,7 @@
 
 /* 对话项 */
 .messagesDialog ol li {
-    border-bottom: 1px solid var(--gray-3);
+    border-bottom: 1px solid var(--card-border);
     padding: 0.4em 0;
     margin: 0;
 
@@ -65,7 +65,7 @@
     }
 
     .post-info {
-        background-color: var(--gray-2);
+        background-color: var(--card-bg);
         border-radius: 5px;
         padding: 0.5em;
     }

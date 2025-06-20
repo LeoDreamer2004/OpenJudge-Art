@@ -1,5 +1,41 @@
 @import "arco-palette.css";
 
+:root {
+    /* accent 1: cyan */
+    --accent-1-bg: var(--cyan-1);
+    --accent-1-bg-dark: var(--cyan-2);
+    --accent-1-bg-darker: var(--cyan-3);
+    --accent-1-border: var(--cyan-2);
+    --accent-1-border-dark: var(--cyan-3);
+    --accent-1-text: var(--cyan-7);
+    --accent-1-text-dark: var(--cyan-9);
+
+    /* accent 2: blue */
+    --accent-2-bg: var(--blue-1);
+    --accent-2-bg-dark: var(--blue-2);
+    --accent-2-bg-darker: var(--blue-3);
+    --accent-2-border: var(--blue-2);
+    --accent-2-border-dark: var(--blue-3);
+    --accent-2-text: var(--blue-7);
+    --accent-2-text-light: var(--blue-6);
+    --accent-2-text-dark: var(--blue-9);
+
+    /* DOM */
+    --text: var(--gray-10);
+    --text-weak: var(--gray-7);
+    --text-weaker: var(--gray-6);
+    --date-text: var(--orangered-7);
+    --bg: var(--gray-1);
+    --card-bg: var(--gray-2);
+    --card-bg-dark: var(--gray-3);
+    --card-border: var(--gray-3);
+    --anchor: var(--blue-7);
+    --anchor-hover: var(--blue-9);
+    --button-bg: var(--blue-3);
+    --button-bg-hover: var(--blue-4);
+    --button-text: var(--blue-9);
+}
+
 /* 基本元素 */
 
 p,
@@ -11,14 +47,18 @@ h5,
 h6,
 * {
     scrollbar-color: var(--gray-3) var(--gray-2);
-    color: var(--gray-10);
+    color: var(--text);
 }
 
 a {
-    color: var(--blue-8);
+    color: var(--anchor);
 
     &:hover {
-        color: var(--blue-9);
+        color: var(--anchor-hover);
+    }
+
+    &:visited {
+        color: var(--anchor);
     }
 }
 
@@ -30,13 +70,13 @@ table {
     margin-bottom: 1em;
 
     thead tr {
-        background-color: var(--cyan-1) !important;
+        background-color: var(--accent-1-bg) !important;
 
         td,
         th {
             border-bottom: 1px solid var(--gray-4) !important;
             padding: 0.3em 0.5em !important;
-            color: var(--cyan-10);
+            color: var(--accent-1-text-dark);
             font-weight: bold;
 
             /* 两端的格子圆角 */
@@ -97,21 +137,21 @@ table {
     }
 
     tr td:not(.result) a {
-        color: var(--cyan-8);
+        color: var(--accent-1-text);
     }
 
     tfoot tr td,
     tfoot tr th {
-        background-color: var(--cyan-1) !important;
+        background-color: var(--accent-1-bg) !important;
         border-top: 1px solid var(--gray-4) !important;
         font-weight: bold;
     }
 }
 
 pre {
-    background-color: var(--gray-1);
+    background-color: var(--bg);
     border-radius: 5px;
-    border: 1px solid var(--gray-3);
+    border: 1px solid var(--card-border);
     padding: 0.5em;
     overflow-x: auto;
     margin-bottom: 0.5em;
@@ -126,8 +166,8 @@ textarea {
     margin-left: 0.2em;
     width: 100%;
     max-width: 300px;
-    background-color: var(--gray-2);
-    border: 1px solid var(--gray-3);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     outline: none;
     transition: all 0.3s ease-in-out;
@@ -156,8 +196,8 @@ input[type="checkbox"]:focus {
 }
 
 button {
-    background-color: var(--blue-3);
-    color: var(--blue-9);
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     padding: 0.5em 1em;
     border-radius: 5px;
@@ -166,7 +206,7 @@ button {
     font-weight: bold;
 
     &:hover {
-        background-color: var(--blue-4);
+        background-color: var(--button-bg-hover);
         text-decoration: none;
     }
 }
@@ -189,14 +229,14 @@ button {
 #siteBody,
 #pageBody {
     background: none;
-    background-color: var(--gray-1);
+    background-color: var(--bg);
 }
 
 body {
     position: absolute;
     width: 100%;
     min-height: 100%;
-    background-color: var(--gray-1);
+    background-color: var(--bg);
     padding-bottom: 20px;
 }
 
@@ -206,7 +246,7 @@ body {
     min-width: 800px;
     height: 40px;
     width: 100%;
-    background-color: var(--gray-2);
+    background-color: var(--card-bg);
 }
 
 #siteHeader.wrapper {
@@ -259,7 +299,7 @@ body {
 
             a:hover {
                 text-decoration: none;
-                color: var(--blue-5);
+                color: var(--anchor);
             }
         }
     }
@@ -290,16 +330,16 @@ body {
     a.w_arr_down {
         color: var(--gray-7);
         background: none;
-        background-color: var(--gray-2);
+        background-color: var(--card-bg);
     }
 
     .account-list.dis {
         border-radius: 5px;
         border: none;
         background: none;
-        background-color: var(--gray-2);
+        background-color: var(--card-bg);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        border: 1px solid var(--gray-3);
+        border: 1px solid var(--card-border);
 
         dl {
             a:hover {
@@ -323,8 +363,8 @@ body {
 
     .search-form {
         input {
-            border: 1px solid var(--gray-3);
-            background-color: var(--gray-2);
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
             border-radius: 5px;
             padding: 0 0 0 0.5em;
             width: 200px;
@@ -340,7 +380,7 @@ body {
 
 /* 题目顶栏 */
 #header {
-    background-color: var(--cyan-1);
+    background-color: var(--accent-1-bg);
     padding-bottom: 10px;
 
     #groupSmallLog,
@@ -360,12 +400,12 @@ body {
     .contest-title-tab h2,
     #headerLine h1 {
         a {
-            color: var(--cyan-8);
+            color: var(--accent-1-text);
             font-weight: bold;
         }
 
         a:hover {
-            color: var(--cyan-9);
+            color: var(--accent-1-text-dark);
             text-decoration: none;
         }
 
@@ -379,13 +419,13 @@ body {
             border-radius: 5px;
 
             a {
-                color: var(--cyan-8);
+                color: var(--accent-1-text);
                 padding: 0.3em 0.7em;
-                background-color: var(--cyan-2);
+                background-color: var(--accent-1-bg-dark);
             }
 
             a:hover {
-                background-color: var(--cyan-3);
+                background-color: var(--accent-1-bg-darker);
                 transition: all 0.5s;
                 text-decoration: none;
             }
@@ -397,13 +437,7 @@ body {
         }
 
         li.current {
-            background-color: var(--cyan-3);
-            color: var(--cyan-2);
-            border-bottom: 2px solid var(--cyan-4);
-
-            a {
-                color: var(--cyan-8);
-            }
+            border-bottom: 2px solid var(--accent-1-border-dark);
         }
     }
 }
@@ -416,10 +450,10 @@ body {
 /* 题目小顶栏 */
 #pageTitle h2 {
     font-size: 1.5em;
-    color: var(--cyan-8);
+    color: var(--accent-1-text);
     padding: 0.5em;
-    background-color: var(--cyan-1);
-    border: 1px solid var(--cyan-2);
+    background-color: var(--accent-1-bg);
+    border: 1px solid var(--accent-1-border);
     border-radius: 5px;
 }
 
@@ -429,23 +463,23 @@ body {
     padding-right: 10px;
 
     li a {
-        color: var(--cyan-7);
+        color: var(--accent-1-text-dark);
         font-size: 13px;
     }
 
     li.current-show a {
-        color: var(--cyan-8);
+        color: var(--accent-1-text);
         font-weight: bold;
         background: transparent;
         border: none;
-        border-bottom: 2px solid var(--cyan-7);
+        border-bottom: 2px solid var(--accent-1-text);
     }
 
     li a:hover {
-        color: var(--cyan-8);
+        color: var(--accent-1-text);
         background: transparent;
         border: none;
-        border-bottom: 2px solid var(--cyan-7);
+        border-bottom: 2px solid var(--accent-1-text);
         transition: color 0.3s ease-in-out;
     }
 }
@@ -453,31 +487,34 @@ body {
 /* 多页表格切换菜单 */
 .page-bar .pages {
     * {
-        color: var(--cyan-8);
+        color: var(--accent-1-text);
         padding: 0.3em 0.7em;
-        border-radius: 5px;
-        background-color: var(--cyan-1);
+        border-radius: 3px;
+        background-color: var(--accent-1-bg);
         border: none;
     }
 
     a:hover {
-        background-color: var(--cyan-2);
-        color: var(--cyan-9);
-        cursor: pointer;
+        background-color: var(--accent-1-bg-dark);
+        color: var(--accent-1-text-dark);
         transition: all 0.1s ease-in-out;
         text-decoration: none;
     }
 
     span.current {
-        color: var(--cyan-9);
+        color: var(--accent-1-text-dark);
         font-weight: bold;
-        background-color: var(--cyan-2);
-        border-bottom: 2px solid var(--cyan-3);
+        background-color: var(--accent-1-bg-dark);
+        border-bottom: 2px solid var(--accent-1-border-dark);
     }
 }
 
 #footer {
     display: none;
+    height: auto;
+    li {
+        color: var(--text-weak);
+    }
 }
 
 /* 题目结果 */
@@ -499,6 +536,6 @@ body {
 
 /* 日期 */
 abbr.date {
-    color: var(--gray-6);
+    color: var(--text-weaker);
     text-decoration: none;
 }

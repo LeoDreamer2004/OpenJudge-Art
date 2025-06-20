@@ -1,7 +1,7 @@
 /* 评价此题 */
 button#create-rating {
     background: none;
-    background-color: var(--cyan-4);
+    background-color: var(--accent-1-bg-dark);
     color: var(--white);
     border: none;
     padding: 0.5em 1em;
@@ -10,7 +10,7 @@ button#create-rating {
     font-size: 14px;
 
     &:hover {
-        background-color: var(--cyan-3);
+        background-color: var(--accent-1-bg-darker);
         transition: background-color 0.3s ease-in-out;
     }
 }
@@ -19,19 +19,19 @@ button#create-rating {
 div[role="dialog"] {
     padding: 0.5em;
     background: none;
-    background-color: var(--gray-1);
+    background-color: var(--bg);
 
     .ui-dialog-titlebar {
         background: none;
-        background-color: var(--gray-2);
+        background-color: var(--card-bg);
         border: none;
-        border-bottom: 1px solid var(--gray-3);
+        border-bottom: 1px solid var(--card-border);
     }
 
     /* 难度评价 */
     form .rating {
         padding: 0.5em;
-        border-bottom: 1px solid var(--gray-3);
+        border-bottom: 1px solid var(--card-border);
     }
 
     /* 标签 */
@@ -62,7 +62,7 @@ div[role="dialog"] {
 
             dd span.rdact {
                 color: var(--gray-8);
-                background-color: var(--gray-3);
+                background-color: var(--card-bg);
             }
         }
     }
@@ -71,9 +71,9 @@ div[role="dialog"] {
     .ui-dialog-buttonpane {
         padding: 0 0.5em;
         margin: 0;
-        border-top: 1px solid var(--gray-3);
+        border-top: 1px solid var(--card-border);
         background: none;
-        background-color: var(--gray-1);
+        background-color: var(--bg);
 
         button {
             background: none;
@@ -92,21 +92,21 @@ div[role="dialog"] {
 
         /* 保存 */
         button:first-child {
-            background-color: var(--blue-3);
-            color: var(--blue-9);
+            background-color: var(--button-bg);
+            color: var(--button-text);
 
             &:hover {
-                background-color: var(--blue-4);
+                background-color: var(--button-bg-hover);
             }
         }
 
         /* 取消 */
         button:last-child {
-            background-color: var(--gray-3);
+            background-color: var(--card-bg);
             color: var(--gray-9);
 
             &:hover {
-                background-color: var(--gray-4);
+                background-color: var(--gray-3);
             }
         }
     }

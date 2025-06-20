@@ -5,8 +5,8 @@
 #main {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--gray-3);
-    background-color: var(--gray-2);
+    border: 1px solid var(--card-border);
+    background-color: var(--card-bg);
     margin-bottom: 1em;
 }
 
@@ -37,11 +37,16 @@
     .group-description,
     .admin-list h4,
     .announcement h4 {
-        background-color: var(--gray-3);
+        background-color: var(--card-bg-dark);
         border-radius: 3px;
         padding: 0.2em 0.5em;
         font-weight: bold;
-        color: var(--blue-8);
+        color: var(--accent-2-text);
+    }
+
+    .group-description p {
+        font-weight: normal;
+        color: var(--text-weak);
     }
 
     .announcement {
@@ -64,45 +69,47 @@
     h1 {
         display: inline;
         float: none;
-        color: var(--blue-8);
-        border-bottom: 2px dotted var(--blue-8);
+        color: var(--accent-2-text);
+        border-bottom: 2px dotted var(--accent-2-text);
     }
 
+    /* 加入按钮 */
     a {
-        background-color:
-            var(--blue-4);
+        background-color: var(--button-bg);
         border: none;
         font-weight: bold;
         font-size: 13px;
         padding: 0.3em 0.7em;
         border-radius: 5px;
-        color: var(--blue-8);
+        color: var(--button-text);
     }
 
     a:hover {
-        background-color: var(--blue-5);
+        background-color: var(--button-bg-hover);
         transition: all 0.5s;
         text-decoration: none;
     }
 }
 
 #main .main-content {
+
     .current-contest h3,
     .coming-contest h3,
     .past-contest h3 {
         padding: 0.5em;
-        border-left: 3px solid var(--blue-5);
+        border-left: 3px solid var(--accent-2-text-light);
         border-bottom: none;
-        background-color: var(--blue-2);
-        color: var(--blue-7);
+        background-color: var(--accent-2-bg-dark);
+        color: var(--accent-2-text-light);
+        margin-bottom: 0.5em;
 
         span {
-            color: var(--blue-8);
+            color: var(--accent-2-text);
             padding-right: 0.5em;
         }
 
         a {
-            color: var(--blue-8);
+            color: var(--accent-2-text);
             text-decoration: none;
         }
     }
@@ -110,7 +117,7 @@
     .current-contest {
         .over-time {
             padding: 8px;
-            color: var(--orangered-7);
+            color: var(--date-text);
         }
 
         .recently-update {
@@ -127,7 +134,7 @@
 
             span {
                 float: right;
-                color: var(--orangered-7);
+                color: var(--date-text);
             }
         }
     }

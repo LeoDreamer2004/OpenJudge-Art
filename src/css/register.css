@@ -1,0 +1,23 @@
+@import "./login.css";
+
+/* 标题和副标题 */
+#main h2 {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+/* 表单 */
+#main form[action="/api/auth/register/"] {
+    min-width: 470px;
+    margin-top: 2em;
+
+    /* 按钮 */
+    dl>dd:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* 内嵌验证 */
+#embed-captcha {
+    max-width: 200px;
+}

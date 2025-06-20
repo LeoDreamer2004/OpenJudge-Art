@@ -1,6 +1,7 @@
 import globalStyles from './css/global.css?inline';
 import indexStyles from './css/index.css?inline';
 import loginStyles from './css/login.css?inline';
+import registerStyles from './css/register.css?inline';
 import settingsStyles from './css/settings.css?inline';
 import groupsStyles from './css/groups.css?inline';
 import contestsRunningStyles from './css/contests-running.css?inline';
@@ -14,10 +15,13 @@ import submitStyles from './css/submit.css?inline';
 import solutionStyles from './css/solution.css?inline';
 import statisticsStyles from './css/statistics.css?inline';
 import userStyles from './css/user.css?inline';
-import { GROUP_ROUTE, GROUPS_ROUTE, CONTESTS_RUNNING_ROUTE, MESSAGES_ROUTE, INDEX_ROUTE, LOGIN_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, HINT_ROUTE, RANKING_ROUTE, SETTINGS_ROUTE, STATISTICS_ROUTE, SUBMIT_ROUTE, SOLUTION_RUOTE, USER_ROUTE, GLOBAL_ROUTE } from './route';
+import {
+    GROUP_ROUTE, GROUPS_ROUTE, CONTESTS_RUNNING_ROUTE, MESSAGES_ROUTE, INDEX_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, HINT_ROUTE, RANKING_ROUTE, SETTINGS_ROUTE, STATISTICS_ROUTE, SUBMIT_ROUTE, SOLUTION_RUOTE, USER_ROUTE, GLOBAL_ROUTE
+} from './route';
 
 INDEX_ROUTE.bindCss(indexStyles, 'index');
 LOGIN_ROUTE.bindCss(loginStyles, 'login');
+REGISTER_ROUTE.bindCss(registerStyles, 'register');
 SETTINGS_ROUTE.bindCss(settingsStyles, 'settings');
 GROUPS_ROUTE.bindCss(groupsStyles, 'groups');
 MESSAGES_ROUTE.bindCss(messagesStyles, 'messages');

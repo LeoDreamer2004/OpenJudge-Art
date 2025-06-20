@@ -14,7 +14,7 @@
 
 .user-info table tbody tr {
     padding: 1em;
-    background-color: var(--gray-2);
+    background-color: var(--card-bg);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     border: none;
 
@@ -25,7 +25,7 @@
 
     .owner-info dl {
         dt {
-            color: var(--blue-8);
+            color: var(--accent-2-text);
             font-weight: bold;
         }
 
@@ -35,12 +35,12 @@
     }
 
     .badges div {
-        background-color: var(--gray-2);
+        background-color: var(--card-bg);
         border-left: 2px solid var(--gray-3);
         padding-left: 1em;
 
         h4 {
-            color: var(--blue-8);
+            color: var(--accent-2-text);
             font-weight: bold;
             border: none;
         }
@@ -51,7 +51,7 @@
     }
 
     a {
-        color: var(--blue-7);
+        color: var(--accent-2-text);
         text-decoration: none;
     }
 }
@@ -71,17 +71,17 @@
         border-bottom: 1px dotted var(--gray-4);
 
         &:hover {
-            background-color: var(--cyan-2);
+            background-color: var(--accent-1-bg);
         }
     }
 
     li.current-group {
-        background-color: var(--cyan-2);
+        background-color: var(--accent-1-bg);
     }
 
     li a {
         line-height: 2.5;
-        color: var(--cyan-8);
+        color: var(--accent-1-text);
 
         img {
             border-radius: 50%;
@@ -113,27 +113,27 @@
 .my-group-contest-info {
     border-radius: 5px;
     border: 1px solid var(--cyan-2);
-    background-color: var(--gray-2);
+    background-color: var(--card-bg);
 
     a {
-        color: var(--cyan-7);
+        color: var(--accent-1-text);
     }
 
     h3 {
-        background-color: var(--cyan-1);
+        background-color: var(--accent-1-bg);
     }
 }
 
 /* 小组设定 */
 .my-contest-list .user-group-info dl {
     dt {
-        color: var(--cyan-9);
+        color: var(--accent-1-text);
         font-weight: bold;
         width: 80px;
     }
 
     dd {
-        color: var(--cyan-8);
+        color: var(--accent-1-text-dark);
         margin-bottom: 0.5em;
     }
 }
@@ -147,7 +147,7 @@
     }
 
     a {
-        color: var(--cyan-8);
+        color: var(--accent-1-text);
         text-decoration: none;
     }
 }

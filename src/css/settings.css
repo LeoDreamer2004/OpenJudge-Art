@@ -3,7 +3,7 @@
 input[type="text"],
 input[type="password"],
 textarea {
-    border: 1px solid var(--gray-3) !important;
+    border: 1px solid var(--card-border) !important;
 }
 
 /* 左侧导航栏 */
@@ -12,23 +12,23 @@ ul#navigation {
         display: block;
         padding: 0.5em;
         font-weight: bold;
-        background-color: var(--gray-1);
-        border-bottom: 1px dotted var(--gray-3);
+        background-color: var(--bg);
+        border-bottom: 1px dotted var(--card-border);
         text-align: right;
 
         a {
-            color: var(--blue-8);
+            color: var(--accent-2-text);
         }
 
         &:hover {
-            background-color: var(--blue-2);
+            background-color: var(--accent-2-bg-dark);
         }
     }
 }
 
 /* 用户表单 */
 form {
-    background: var(--gray-1);
+    background: var(--bg);
     padding: 1em;
     border-radius: 10px;
 }
@@ -40,7 +40,7 @@ form {
 
     dt {
         font-weight: bold;
-        color: var(--blue-7);
+        color: var(--accent-2-text);
         line-height: 2;
     }
 

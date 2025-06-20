@@ -10,7 +10,7 @@
 }
 
 #submit form#solution_submit {
-    background-color: var(--gray-2);
+    background-color: var(--card-bg);
     padding: 1em;
     padding-top: 0.2em;
     border-radius: 10px;

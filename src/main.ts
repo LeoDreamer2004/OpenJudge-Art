@@ -1,4 +1,4 @@
-import { routes } from './route.ts';
+import { ALL_ROUTE, routes } from './route.ts';
 import './dom-tweaks.ts';
 import './css-bindings.ts';
 
@@ -9,4 +9,5 @@ for (const route of routes) {
         break; // Only apply the first matching route
     }
 }
+ALL_ROUTE.apply(); // Apply global styles and tweaks
 

@@ -4,14 +4,14 @@
     /* 作者 */
     cite a {
         font-size: 12px;
-        color: var(--blue-8);
+        color: var(--anchor);
 
         &:visited {
             color: var(--purple-8);
         }
 
         &:hover {
-            color: var(--orangered-6);
+            color: var(--anchor-hover);
         }
     }
 }

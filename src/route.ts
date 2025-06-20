@@ -50,6 +50,7 @@ class Route {
 
 const INDEX_ROUTE = new Route(/^http:\/\/openjudge.cn\/$/);
 const LOGIN_ROUTE = new Route(/^http:\/\/.*openjudge.cn\/auth\/login\/$/);
+const REGISTER_ROUTE = new Route(/^http:\/\/.*openjudge.cn\/register\/$/);
 const SETTINGS_ROUTE = new Route(/^http:\/\/openjudge.cn\/settings.*$/);
 const GROUPS_ROUTE = new Route(/^http:\/\/openjudge.cn\/groups.*$/);
 const CONTESTS_RUNNING_ROUTE = new Route(/^http:\/\/openjudge.cn\/contests\/running$/);
@@ -64,10 +65,12 @@ const SOLUTION_RUOTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/solution\
 const STATISTICS_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/statistics\//);
 const USER_ROUTE = new Route(/^http:\/\/openjudge\.cn\/user\//);
 const GLOBAL_ROUTE = new Route(/^http:\/\/.*openjudge\.cn\//);
+const ALL_ROUTE = new Route(/^http:\/\/.*openjudge\.cn\//);
 
 const routes: Route[] = [
     INDEX_ROUTE,
     LOGIN_ROUTE,
+    REGISTER_ROUTE,
     SETTINGS_ROUTE,
     GROUPS_ROUTE,
     CONTESTS_RUNNING_ROUTE,
@@ -89,6 +92,7 @@ export {
     Route,
     INDEX_ROUTE,
     LOGIN_ROUTE,
+    REGISTER_ROUTE,
     SETTINGS_ROUTE,
     GROUPS_ROUTE,
     CONTESTS_RUNNING_ROUTE,
@@ -103,5 +107,6 @@ export {
     STATISTICS_ROUTE,
     USER_ROUTE,
     GLOBAL_ROUTE,
+    ALL_ROUTE,
     routes,
 };

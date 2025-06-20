@@ -1,6 +1,46 @@
-import { INDEX_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, SOLUTION_RUOTE } from "./route";
+import { ALL_ROUTE, INDEX_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, REGISTER_ROUTE, SOLUTION_RUOTE } from "./route";
+import sentences from './resource/sentences.txt';
 
-function moveTitleToWrapper() {
+function replaceOpenJudgeLogoSubtitle() {
+    const subtitle = document.querySelector('#siteBody #siteHeader h1.logo a span');
+    if (!subtitle) { return; }
+    // choose a random sentence from sentences.txt
+    fetch(sentences)
+        .then(response => response.text())
+        .then(text => {
+            const sentencesArray = text.split('\n').filter(line => line.trim() !== '');
+            const randomIndex = Math.floor(Math.random() * sentencesArray.length);
+            subtitle.textContent = sentencesArray[randomIndex];
+        })
+        .catch(error => {
+            console.error('Error fetching sentences:', error);
+        });
+}
+ALL_ROUTE.addTweak(replaceOpenJudgeLogoSubtitle);
+
+function replaceFooterOJInfo() {
+    const ojInfo = document.querySelector('#footer ul.oj-info li');
+    if (!ojInfo) {
+        return;
+    }
+    ojInfo.innerHTML = `<a href="https://github.com/LeoDreamer2004/OpenJudge-Art">@OpenJudge-Art</a> by LeoDreamer`
+
+    const languageSwitch = document.querySelector('#footer ul.debug-info li');
+    if (languageSwitch) {
+        languageSwitch.remove();
+    }
+}
+INDEX_ROUTE.addTweak(replaceFooterOJInfo);
+
+function replaceIndexApplyGroup() {
+    const applyGroup = document.querySelector('#side .appli-group');
+    if (applyGroup) {
+        applyGroup.innerHTML = `<strong>欢迎来到 OpenJudge ... Art 版！</strong><a href="http://openjudge.cn/groups/new">创建小组</a>`
+    }
+}
+INDEX_ROUTE.addTweak(replaceIndexApplyGroup);
+
+function moveIndexTitleToWrapper() {
     const main = document.querySelector('#main');
     if (!main) {
         console.error('Main element not found');
@@ -20,7 +60,7 @@ function moveTitleToWrapper() {
     }
     main.insertBefore(wrapper, main.firstChild);
 }
-INDEX_ROUTE.addTweak(moveTitleToWrapper);
+INDEX_ROUTE.addTweak(moveIndexTitleToWrapper);
 
 function moveLimitsToPracticeEnd() {
     const problemParams = document.querySelector('.problem-page .problem-params');
@@ -139,3 +179,15 @@ function moveNotificationToContestDescription() {
 }
 MATCH_ROUTE.addTweak(moveNotificationToContestDescription);
 
+
+function renameRegisterTitle() {
+    const title = document.querySelector('#main h2');
+    if (title) {
+        title.textContent = '欢迎来到 OpenJudge';
+        const subtitle = document.createElement('p');
+        subtitle.textContent = '一入算法深似海，从此节操是路人';
+        subtitle.className = 'subtitle';
+        title.insertAdjacentElement('afterend', subtitle);
+    }
+}
+REGISTER_ROUTE.addTweak(renameRegisterTitle);
