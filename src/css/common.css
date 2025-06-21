@@ -1,0 +1,73 @@
+@import "./global/arco-palette.css";
+@import "./global/basic-dom.css";
+@import "./components/problem-result.css";
+
+/* 错误信息 */
+#error {
+    background-color: var(--red-2);
+    color: var(--red-8);
+
+    * {
+        color: var(--red-8);
+    }
+
+    border-left: 5px solid var(--red-5);
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+/* 背景 */
+#siteBody,
+#pageBody {
+    background: none;
+    background-color: var(--bg);
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--bg);
+    padding-bottom: 20px;
+}
+
+/* 多页表格切换菜单 */
+.page-bar .pages {
+    * {
+        color: var(--accent-1-text);
+        padding: 0.3em 0.7em;
+        border-radius: 3px;
+        background-color: var(--accent-1-bg);
+        border: none;
+    }
+
+    a:hover {
+        background-color: var(--accent-1-bg-dark);
+        color: var(--accent-1-text-dark);
+        transition: all 0.1s ease-in-out;
+        text-decoration: none;
+    }
+
+    span.current {
+        color: var(--accent-1-text-dark);
+        font-weight: bold;
+        background-color: var(--accent-1-bg-dark);
+        border-bottom: 2px solid var(--accent-1-border-dark);
+    }
+}
+
+/* 页脚 */
+#footer {
+    display: none;
+    height: auto;
+
+    li {
+        color: var(--text-weak);
+    }
+}
+
+/* 日期 */
+abbr.date {
+    color: var(--text-weaker);
+    text-decoration: none;
+}

@@ -1,0 +1,32 @@
+@import "./common.css";
+@import "./components/site-header.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
+
+#sitePagebody .wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main.col-9 {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    border: 1px solid var(--card-border);
+    padding: 1em 2em;
+    font-size: 14px;
+    margin: 0;
+}
+
+h2.title {
+    color: var(--accent-1-text);
+    text-align: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--accent-1-text);
+    font-size: 18px;
+}
+
+ol {
+    padding-left: 1em;
+}

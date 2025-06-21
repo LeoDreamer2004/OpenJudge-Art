@@ -1,0 +1,55 @@
+/* 大顶栏样式 */
+#siteHeader.wrapper {
+    min-width: 800px;
+    height: 40px;
+    width: 100%;
+    background-color: var(--card-bg);
+    margin-bottom: 20px;
+}
+
+/* 大顶栏 logo */
+#siteHeader.wrapper .logo {
+    margin: 0;
+    padding: 8px;
+    outline: none;
+
+    a {
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        font-size: 20px;
+        font-weight: normal;
+        font-family: "Open Sans", sans-serif;
+        color: var(--gray-5);
+
+        span {
+            text-shadow: none;
+            color: var(--gray-7);
+        }
+    }
+
+    a:hover {
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+}
+
+/* 大顶栏用户框 */
+#siteHeader.wrapper #topsearch {
+    margin: 0 10px 0 0;
+}
+
+#siteHeader.wrapper #topsearch #userMenu {
+    border: none;
+    text-shadow: none;
+
+    li {
+        a {
+            color: var(--gray-6)
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: var(--anchor);
+        }
+    }
+}

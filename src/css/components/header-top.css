@@ -1,0 +1,118 @@
+@import "../global/icons.css";
+
+/* 小顶栏 */
+#headerTop {
+    background: none;
+}
+
+#headerTop .wrapper {
+    min-width: 800px;
+    height: 40px;
+    width: 100%;
+    background-color: var(--card-bg);
+}
+
+/* 顶栏 logo */
+#headerTop .wrapper .logo {
+    margin: 0;
+    padding: 8px;
+    outline: none;
+
+    a {
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        font-size: 20px;
+        font-weight: normal;
+        font-family: "Open Sans", sans-serif;
+        color: var(--gray-5);
+
+        span {
+            text-shadow: none;
+            color: var(--gray-7);
+        }
+    }
+
+    a:hover {
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+}
+
+#headerTop .wrapper .logo {
+    padding: 5px 5px 5px 8px;
+}
+
+
+/* 小顶栏用户框 */
+#headerTop .wrapper #userToolbar {
+    margin: 5px;
+
+    a {
+        color: var(--gray-7);
+    }
+
+    a:hover {
+        color: var(--gray-8);
+        background-color: var(--gray-3);
+        text-decoration: none;
+    }
+}
+
+/* 折叠用户菜单 */
+#headerTop .wrapper #userToolbar .account-link {
+    a.w_arr_down {
+        color: var(--gray-7);
+        background: none;
+        background-color: var(--card-bg);
+    }
+
+    .account-list.dis {
+        border-radius: 5px;
+        border: none;
+        background: none;
+        background-color: var(--card-bg);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--card-border);
+
+        dl {
+            a:hover {
+                background-color: transparent;
+            }
+
+            dd a {
+                line-height: 3;
+            }
+
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+/* 小顶栏搜索框 */
+#headerTop .wrapper .practice-search {
+    margin: 5px;
+
+    .search-form {
+        input {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+            padding: 0 0 0 0.5em;
+            width: 200px;
+            color: var(--gray-7);
+        }
+
+        button {
+            border-radius: 0;
+            top: 4px;
+            right: 0;
+            padding: 0;
+            background: transparent;
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-image: var(--i-search);
+        }
+    }
+}

@@ -1,4 +1,6 @@
-@import "./login.css";
+@import "./common.css";
+@import "./components/site-header.css";
+@import "./components/login-form.css";
 
 /* 顶部冗余信息 */
 #main .contest-wrapper,

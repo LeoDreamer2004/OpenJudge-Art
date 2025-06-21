@@ -8,6 +8,7 @@ function replaceOpenJudgeLogoSubtitle() {
     fetch(sentences)
         .then(response => response.text())
         .then(text => {
+            console.log('text. :>> ');
             const sentencesArray = text.split('\n').filter(line => line.trim() !== '');
             const randomIndex = Math.floor(Math.random() * sentencesArray.length);
             subtitle.textContent = sentencesArray[randomIndex];
@@ -43,7 +44,6 @@ INDEX_ROUTE.addTweak(replaceIndexApplyGroup);
 function moveIndexTitleToWrapper() {
     const main = document.querySelector('#main');
     if (!main) {
-        console.error('Main element not found');
         return;
     }
     const h2 = main.querySelector('h2');
@@ -119,13 +119,13 @@ function addCopyButtonOnSampleCode() {
 PRACTICE_ROUTE.addTweak(addCopyButtonOnSampleCode);
 
 function removeStyleOfPracticeDescription() {
-    const description = document.querySelector('.problem-page .problem-content dd p');
+    const description = document.querySelector('.problem-page .problem-content dd');
     // remove all style attributes from the description
     if (description) {
         description.removeAttribute('style');
-        // remove all <span> elements with style attributes
-        const spans = description.querySelectorAll('span[style]');
-        spans.forEach(span => {
+        // remove all elements with style attributes
+        const elements = description.querySelectorAll('* [style]');
+        elements.forEach(span => {
             span.removeAttribute('style');
         });
     }

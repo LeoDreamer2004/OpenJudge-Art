@@ -1,4 +1,5 @@
-@import "./global.css";
+@import "./common.css";
+@import "./components/site-header.css";
 
 input[type="text"],
 input[type="password"],

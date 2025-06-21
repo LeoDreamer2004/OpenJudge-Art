@@ -1,4 +1,6 @@
-@import "./global.css";
+@import "./common.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
 
 :root {
     --contest-width: 800px;
@@ -76,6 +78,17 @@
 .contest-problem table {
     width: var(--contest-width);
     margin-top: 1em;
+}
+
+/* 通过图标 */
+.contest-problem table tr td.solved {
+    img[title="已解决"] {
+        content: var(--i-right);
+    };
+    img[title="未解决"] {
+        content: var(--i-wrong);
+        padding-left: 3px;
+    }
 }
 
 /* 可能存在的通知 */

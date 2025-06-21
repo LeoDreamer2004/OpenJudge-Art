@@ -1,5 +1,5 @@
-@import "arco-palette.css";
-@import "global.css";
+@import "./common.css";
+@import "./components/header-top.css";
 
 #side,
 #main {
@@ -51,7 +51,6 @@
 
     .announcement {
         .date {
-            color: var(--gray-7);
             font-size: 0.9em;
         }
     }
@@ -129,7 +128,7 @@
     .coming-contest ul.container {
         li {
             padding: 5px;
-            border-bottom: 1px solid var(--gray-4);
+            border-bottom: 1px solid var(--card-border);
             font-weight: bold;
 
             span {

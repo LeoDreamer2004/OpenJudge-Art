@@ -16,10 +16,13 @@ export default defineConfig({
         license: 'MIT',
         updateURL: 'https://github.com/LeoDreamer2004/OpenJudge-Art/releases',
         supportURL: 'https://github.com/LeoDreamer2004/OpenJudge-Art/issues',
+        'run-at': 'document-start',
+        'inject-into': 'page',
         $extra: {
           'author-blog': 'https://LeoDreamer2004.github.io'
         }
       },
+      server: { mountGmApi: true },
     }),
   ],
 });

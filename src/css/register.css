@@ -1,4 +1,8 @@
-@import "./login.css";
+@import "./common.css";
+@import "./components/site-header.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
+@import "./components/login-form.css";
 
 /* 标题和副标题 */
 #main h2 {

@@ -1,5 +1,6 @@
-@import "./global.css";
-@import "./animation.css";
+@import "./common.css";
+@import "./global/animation.css";
+@import "./components/site-header.css";
 
 #main {
     h2 {

@@ -1,0 +1,208 @@
+:root {
+    /* accent 1: cyan */
+    --accent-1-bg: var(--cyan-1);
+    --accent-1-bg-dark: var(--cyan-2);
+    --accent-1-bg-darker: var(--cyan-3);
+    --accent-1-border: var(--cyan-2);
+    --accent-1-border-dark: var(--cyan-3);
+    --accent-1-text: var(--cyan-7);
+    --accent-1-text-dark: var(--cyan-9);
+
+    /* accent 2: blue */
+    --accent-2-bg: var(--blue-1);
+    --accent-2-bg-dark: var(--blue-2);
+    --accent-2-bg-darker: var(--blue-3);
+    --accent-2-border: var(--blue-2);
+    --accent-2-border-dark: var(--blue-3);
+    --accent-2-text: var(--blue-7);
+    --accent-2-text-light: var(--blue-6);
+    --accent-2-text-dark: var(--blue-9);
+
+    /* DOM */
+    --text: var(--gray-10);
+    --text-weak: var(--gray-7);
+    --text-weaker: var(--gray-6);
+    --date-text: var(--orangered-7);
+    --bg: var(--gray-1);
+    --card-bg: var(--gray-2);
+    --card-bg-dark: var(--gray-3);
+    --card-border: var(--gray-3);
+    --anchor: var(--blue-7);
+    --anchor-hover: var(--blue-9);
+    --button-bg: var(--blue-3);
+    --button-bg-hover: var(--blue-4);
+    --button-text: var(--blue-9);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+* {
+    scrollbar-color: var(--gray-3) var(--gray-2);
+    color: var(--text);
+}
+
+a {
+    color: var(--anchor);
+
+    &:hover {
+        color: var(--anchor-hover);
+    }
+
+    &:visited {
+        color: var(--anchor);
+    }
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--gray-4);
+    border-radius: 5px;
+    margin-bottom: 1em;
+
+    thead tr {
+        background-color: var(--accent-1-bg) !important;
+
+        td,
+        th {
+            border-bottom: 1px solid var(--gray-4) !important;
+            padding: 0.3em 0.5em !important;
+            color: var(--accent-1-text-dark);
+            font-weight: bold;
+
+            /* 两端的格子圆角 */
+            &:first-child {
+                border-top-left-radius: 5px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 5px;
+            }
+        }
+    }
+
+    tbody,
+    tfoot {
+        tr {
+
+            td,
+            th {
+
+                /* 两端的格子圆角 */
+                &:first-child {
+                    border-top-left-radius: 5px;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 5px;
+                }
+
+                border-bottom: 1px dotted var(--gray-4) !important;
+                padding: 0.2em 0.5em !important;
+            }
+        }
+
+        tr:last-child {
+
+            td,
+            th {
+                border-bottom: none !important;
+
+                &:first-child {
+                    border-bottom-left-radius: 5px;
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: 5px;
+                }
+            }
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: var(--gray-2);
+    }
+
+    tr:nth-child(odd) {
+        background-color: var(--gray-1);
+    }
+
+    tr td:not(.result) a {
+        color: var(--accent-1-text);
+    }
+
+    tfoot tr td,
+    tfoot tr th {
+        background-color: var(--accent-1-bg) !important;
+        border-top: 1px solid var(--gray-4) !important;
+        font-weight: bold;
+    }
+}
+
+pre {
+    background-color: var(--bg);
+    border-radius: 5px;
+    border: 1px solid var(--card-border);
+    padding: 0.5em;
+    overflow-x: auto;
+    margin-bottom: 0.5em;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--gray-8);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select,
+textarea {
+    margin-left: 0.2em;
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    padding-left: 0.3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    &:hover {
+        background-color: var(--gray-3);
+        border-color: var(--gray-4);
+        box-shadow: 0 0 3px var(--blue-6);
+    }
+
+    &:focus {
+        border-color: var(--blue-6);
+        box-shadow: 0 0 5px var(--blue-6);
+    }
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus,
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus {
+    border: none;
+    box-shadow: none;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+
+    &:hover {
+        background-color: var(--button-bg-hover);
+        text-decoration: none;
+    }
+}

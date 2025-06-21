@@ -1,5 +1,8 @@
-@import "./global.css";
-@import "./problem-evaluate.css";
+@import "./common.css";
+@import "./components/problem-evaluate.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
+@import "./components/practice-title.css";
 
 /* 问题描述 */
 .problem-page {

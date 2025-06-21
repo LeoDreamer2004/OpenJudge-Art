@@ -1,4 +1,7 @@
-@import "./login.css";
+@import "./common.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
+@import "./components/login-form.css";
 
 /* 未登录 */
 #main .notice {

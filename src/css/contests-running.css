@@ -1,4 +1,5 @@
-@import "./global.css";
+@import "./common.css";
+@import "./components/site-header.css";
 
 /* 比赛表格 */
 .contest-intro {

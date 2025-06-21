@@ -1,0 +1,11 @@
+:root {
+    --i-search: url(https://gitlab.eduxiji.net/pku2200010825/image-host/-/raw/master/svg/search.svg);
+    --i-right: url(https://gitlab.eduxiji.net/pku2200010825/image-host/-/raw/master/svg/tick.svg);
+    --i-wrong: url(https://gitlab.eduxiji.net/pku2200010825/image-host/-/raw/master/svg/cross.svg);
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --i-search: url(https://gitlab.eduxiji.net/pku2200010825/image-host/-/raw/master/svg/search-dark.svg)
+    }
+}

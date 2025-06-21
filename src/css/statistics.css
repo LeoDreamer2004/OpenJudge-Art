@@ -1,4 +1,7 @@
-@import "./global.css";
+@import "./common.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
+@import "./components/practice-title.css";
 
 #side {
     margin: 0;

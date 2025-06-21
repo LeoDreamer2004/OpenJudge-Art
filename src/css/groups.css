@@ -1,4 +1,5 @@
-@import "./global.css";
+@import "./common.css";
+@import "./components/site-header.css";
 
 /* 左侧导航栏 */
 #side.group-panel ul {
@@ -77,12 +78,8 @@
             text-decoration: none;
         }
 
-        span {
-            color: var(--gray-7);
-        }
-
-        p {
-            color: var(--gray-6);
+        span, p {
+            color: var(--text-weak);
         }
     }
 

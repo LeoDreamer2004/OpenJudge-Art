@@ -1,0 +1,55 @@
+@import "./common.css";
+@import "./components/site-header.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
+
+#help,
+#main.col-16 {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    border: 1px solid var(--card-border);
+    padding: 1em 2em;
+    font-size: 14px;
+
+    p,
+    h2,
+    h3,
+    h4 {
+        margin-bottom: 0.7em;
+    }
+
+    pre {
+        margin: 0;
+    }
+}
+
+h1.title,
+h2.title {
+    color: var(--accent-1-text);
+    text-align: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--accent-1-text);
+    font-size: 23px;
+}
+
+h4.author {
+    margin-top: 0.5em;
+    color: var(--accent-1-text);
+    text-align: center;
+}
+
+h2.section {
+    color: var(--accent-1-text);
+    background-color: var(--accent-1-bg);
+    border-left: 3px solid var(--accent-1-text);
+    padding: 0.5em;
+    font-size: 20px;
+}
+
+h3.subsection {
+    color: var(--accent-1-text);
+    border-left: 3px solid var(--accent-1-text);
+    padding: 0.2em;
+    padding-left: 0.5em;
+    font-size: 17px;
+}

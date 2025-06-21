@@ -1,0 +1,16 @@
+/* 题目结果 */
+.result-pending {
+    color: var(--gray-7) !important;
+}
+
+.result-right {
+    color: var(--blue-6) !important;
+}
+
+.result-wrong {
+    color: var(--red-6) !important;
+}
+
+.result-ce {
+    color: var(--gold-6) !important;
+}

@@ -1,4 +1,6 @@
-@import "./global.css";
+@import "./common.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
 
 #clarify table tbody tr td {
     /* 作者 */
