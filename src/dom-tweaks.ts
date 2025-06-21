@@ -8,7 +8,6 @@ function replaceOpenJudgeLogoSubtitle() {
     fetch(sentences)
         .then(response => response.text())
         .then(text => {
-            console.log('text. :>> ');
             const sentencesArray = text.split('\n').filter(line => line.trim() !== '');
             const randomIndex = Math.floor(Math.random() * sentencesArray.length);
             subtitle.textContent = sentencesArray[randomIndex];
