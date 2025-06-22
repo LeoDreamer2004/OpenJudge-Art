@@ -60,16 +60,17 @@
         .end-time {
             color: var(--accent-1-text);
             font-weight: bold;
+            font-size: 14px;
             top: 80px;
         }
 
         .start-time {
-            left: 90px;
+            left: 95px;
         }
 
         .end-time {
             left: auto;
-            right: 90px;
+            right: 95px;
         }
     }
 }
