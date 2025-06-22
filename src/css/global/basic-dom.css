@@ -156,7 +156,9 @@ pre {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
 select,
 textarea {
     margin-left: 0.2em;
@@ -183,12 +185,93 @@ textarea {
     }
 }
 
-input[type="radio"]:hover,
-input[type="radio"]:focus,
-input[type="checkbox"]:hover,
-input[type="checkbox"]:focus {
-    border: none;
-    box-shadow: none;
+input[type="radio"] {
+    width: 30px !important;
+    height: 30px !important;
+    appearance: none;
+    border: none !important;
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--card-border);
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    &:checked:before {
+        transition: all 0.15s ease-in-out;
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--button-bg);
+        background: var(--button-bg);
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    &:checked:after {
+        content: '';
+        width: 10px;
+        height: 5px;
+        border: 2px solid var(--button-text);
+        border-top: transparent;
+        border-right: transparent;
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        transform: rotate(-45deg);
+    }
+}
+
+input[type="checkbox"] {
+    width: 15px !important;
+    height: 15px !important;
+    appearance: none;
+    border: none !important;
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        border: 1px solid var(--card-border);
+        display: inline-block;
+        border-radius: 3px;
+        vertical-align: middle;
+    }
+
+    &:checked:before {
+        transition: all 0.15s ease-in-out;
+        content: '';
+        width: 15px;
+        height: 15px;
+        border: 1px solid var(--button-bg);
+        background: var(--button-bg);
+        display: inline-block;
+        border-radius: 3px;
+        vertical-align: middle;
+    }
+
+    &:checked:after {
+        content: '';
+        width: 10px;
+        height: 5px;
+        border-left: 2px solid var(--button-text);
+        border-bottom: 2px solid var(--button-text);
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        transform: rotate(-45deg);
+    }
 }
 
 button {

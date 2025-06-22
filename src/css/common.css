@@ -1,3 +1,4 @@
+@import "./global/icons.css";
 @import "./global/arco-palette.css";
 @import "./global/basic-dom.css";
 @import "./components/problem-result.css";
@@ -70,4 +71,10 @@ body {
 abbr.date {
     color: var(--text-weaker);
     text-decoration: none;
+}
+
+/* 默认头像 */
+img[src="http://static.openjudge.cn/images/default_avatar_large.png"],
+img[src="http://static.openjudge.cn/images/default_avatar_small.png"] {
+    content: var(--i-default-user);
 }

@@ -25,7 +25,7 @@ class Route {
             this.injectCss();
             console.log(`openjudge ${this.css_name} styles loaded`);
         }
-        
+
         for (const tweak of this.tweaks) {
             // if loaded, apply immediately
             if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -71,10 +71,9 @@ const SEARCH_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/search\//);
 const SUBMIT_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/submit\/$/);
 const SOLUTION_RUOTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/solution\//);
 const STATISTICS_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\/statistics\//);
-const CLARIFY_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/clarify\//);
 const PRACTICE_ROUTE = new Route(/^http:\/\/.*\.openjudge\.cn\/[^\/]+\/[^\/]+\//);
 const USER_ROUTE = new Route(/^http:\/\/openjudge\.cn\/user\//);
-const COMMON_ROUTE = new Route(/^http:\/\/.*openjudge\.cn\//);
+const GENERAL_ROUTE = new Route(/^http:\/\/.*openjudge\.cn\//);
 const ALL_ROUTE = new Route(/^http:\/\/.*openjudge\.cn\//);
 
 const routes: Route[] = [
@@ -95,10 +94,9 @@ const routes: Route[] = [
     SUBMIT_ROUTE,
     SOLUTION_RUOTE,
     STATISTICS_ROUTE,
-    CLARIFY_ROUTE,
     PRACTICE_ROUTE,
     USER_ROUTE,
-    COMMON_ROUTE
+    GENERAL_ROUTE
 ]
 
 // export the routes for use in other modules
@@ -122,9 +120,8 @@ export {
     SUBMIT_ROUTE,
     SOLUTION_RUOTE,
     STATISTICS_ROUTE,
-    CLARIFY_ROUTE,
     USER_ROUTE,
-    COMMON_ROUTE,
+    GENERAL_ROUTE,
     ALL_ROUTE,
     routes,
 };

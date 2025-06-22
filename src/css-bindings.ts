@@ -1,4 +1,4 @@
-import commonStyles from './css/common.css?inline';
+import generalStyles from './css/general.css?inline';
 import indexStyles from './css/index.css?inline';
 import loginStyles from './css/login.css?inline';
 import registerStyles from './css/register.css?inline';
@@ -17,12 +17,10 @@ import submitStyles from './css/submit.css?inline';
 import searchStyles from './css/search.css?inline';
 import solutionStyles from './css/solution.css?inline';
 import statisticsStyles from './css/statistics.css?inline';
-import clarifyStyles from './css/clarify.css?inline';
 import userStyles from './css/user.css?inline';
 import {
     GROUP_ROUTE, GROUPS_ROUTE, CONTESTS_RUNNING_ROUTE, MESSAGES_ROUTE, INDEX_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, HELP_ROUTE, ABOUT_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, HINT_ROUTE, RANKING_ROUTE, SETTINGS_ROUTE, STATISTICS_ROUTE, SUBMIT_ROUTE,
-    SEARCH_ROUTE,
-    SOLUTION_RUOTE, CLARIFY_ROUTE, USER_ROUTE, COMMON_ROUTE
+    SEARCH_ROUTE, SOLUTION_RUOTE, USER_ROUTE, GENERAL_ROUTE
 } from './route';
 
 INDEX_ROUTE.bindCss(indexStyles, 'index');
@@ -44,7 +42,6 @@ SEARCH_ROUTE.bindCss(searchStyles, 'search');
 SOLUTION_RUOTE.bindCss(solutionStyles, 'solution');
 STATISTICS_ROUTE.bindCss(statisticsStyles, 'statistics');
 USER_ROUTE.bindCss(userStyles, 'user');
-CLARIFY_ROUTE.bindCss(clarifyStyles, 'clarify');
-COMMON_ROUTE.bindCss(commonStyles, 'common');
+GENERAL_ROUTE.bindCss(generalStyles, 'general');
 
 
