@@ -12,60 +12,65 @@
     border-radius: 5px;
     width: var(--contest-width);
     height: 120px;
+    position: relative;
 
     dl.past-contest-info,
     dl.current-contest-info {
         * {
-            max-width: 200px !important;
+            position: absolute;
+        }
+
+        .current-time,
+        .current-time-dd {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .current-time {
             color: var(--date-text);
-            font-size: 1.5em;
-            left: 325px;
-            top: -65px;
+            font-size: 20px;
+            top: 20px;
+        }
+
+        .current-time-dd {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--red-5);
+            top: 70px;
         }
 
         .start-time-dd,
-        .end-time-dd,
-        .current-time-dd {
+        .end-time-dd {
             color: var(--date-text);
-            font-size: 1.2em;
+            font-size: 18px;
             font-weight: bold;
+            top: 55px;
+        }
+
+        .start-time-dd {
+            left: 40px;
+        }
+
+        .end-time-dd {
+            left: auto;
+            right: 40px;
         }
 
         .start-time,
         .end-time {
             color: var(--accent-1-text);
             font-weight: bold;
-        }
-
-        .start-time-dd {
-            top: 35px;
-            left: 40px;
+            top: 80px;
         }
 
         .start-time {
             left: 90px;
-            top: 80px;
-        }
-
-        .current-time-dd {
-            color: var(--red-5);
-            left: 370px;
-            top: -px;
-        }
-
-        .end-time-dd {
-            left: 600px;
-            top: -7px;
         }
 
         .end-time {
-            left: 650px;
-            top: 37px;
+            left: auto;
+            right: 90px;
         }
-
     }
 }
 
@@ -81,10 +86,14 @@
 }
 
 /* 通过图标 */
+#problemsList table tr td.solved,
 .contest-problem table tr td.solved {
     img[title="已解决"] {
         content: var(--i-right);
-    };
+    }
+
+    ;
+
     img[title="未解决"] {
         content: var(--i-wrong);
         padding-left: 3px;
