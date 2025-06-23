@@ -186,11 +186,12 @@ textarea {
 }
 
 input[type="radio"] {
-    width: 30px !important;
-    height: 30px !important;
+    width: 20px !important;
+    height: 20px !important;
     appearance: none;
     border: none !important;
     position: relative;
+    padding: 0 !important;
 
     &:before {
         content: '';
@@ -224,8 +225,8 @@ input[type="radio"] {
         text-align: center;
         display: block;
         position: absolute;
-        top: 8px;
-        left: 8px;
+        top: 5px;
+        left: 5px;
         transform: rotate(-45deg);
     }
 }

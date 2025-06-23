@@ -45,10 +45,18 @@ form {
         line-height: 2;
     }
 
+    dd {
+        vertical-align: middle;
+    }
+
     dd img {
         width: 100px;
         height: 100px;
         border-radius: 10%;
+    }
+
+    input[type="radio"] {
+        margin: 0 0.5em;
     }
 }
 

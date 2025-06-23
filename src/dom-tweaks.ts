@@ -112,7 +112,14 @@ function addCopyButtonOnSampleCode() {
             }, 2000);
         });
 
-        pre.appendChild(copyButton);
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-wrapper';
+        // pre -> wrapper { pre , copyButton }
+        if (pre.parentNode) {
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+            wrapper.appendChild(copyButton);
+        }
     });
 }
 PRACTICE_ROUTE.addTweak(addCopyButtonOnSampleCode);

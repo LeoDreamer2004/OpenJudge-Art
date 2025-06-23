@@ -2,12 +2,13 @@
 button#create-rating {
     background: none;
     background-color: var(--accent-1-bg-dark);
-    color: var(--white);
+    color: var(--accent-1-text) !important;
     border: none;
     padding: 0.5em 1em;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: bold;
 
     &:hover {
         background-color: var(--accent-1-bg-darker);
@@ -20,94 +21,141 @@ div[role="dialog"] {
     padding: 0.5em;
     background: none;
     background-color: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+}
 
-    .ui-dialog-titlebar {
-        background: none;
-        background-color: var(--card-bg);
-        border: none;
-        border-bottom: 1px solid var(--card-border);
+/* 顶栏 */
+div[role="dialog"] .ui-dialog-titlebar {
+    background: none;
+    border-radius: 0;
+    background-color: var(--card-bg);
+    border: none;
+    border-left: 3px solid var(--card-border);
+
+    a.ui-dialog-titlebar-close {
+        margin-top: -8px;
+        padding: 0;
     }
 
-    /* 难度评价 */
-    form .rating {
+    .ui-icon {
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in-out;
+        background-position: 0 0 !important;
+        background-image: var(--i-close);
+        background-size: 16px;
+        margin: 0 !important;
+    }
+
+    .ui-state-hover {
+        background: none !important;
+        border: none !important;
+        right: .3em !important;
+    }
+
+    .ui-state-hover .ui-icon {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+/* 难度评价 */
+div[role="dialog"] form .rating {
+    padding: 0.5em;
+    border-bottom: 1px solid var(--card-border);
+
+    img {
+        width: 16px;
+        height: 16px;
+
+        &[src="http://static.openjudge.cn/images/nst.gif"] {
+            content: var(--i-star-empty);
+        }
+
+        &[src="http://static.openjudge.cn/images/st.gif"] {
+            content: var(--i-star-select);
+        }
+
+        &[src="http://static.openjudge.cn/images/sth.gif"] {
+            content: var(--i-star-hover);
+        }
+    }
+
+}
+
+/* 标签 */
+div[role="dialog"] form ul.interest_form {
+    padding: 0.3em 0;
+
+    li {
         padding: 0.5em;
-        border-bottom: 1px solid var(--card-border);
     }
 
-    /* 标签 */
-    form ul.interest_form {
-        padding: 0.3em 0;
-
-        li {
-            padding: 0.5em;
-        }
-
-        li:first-child {
-            padding-bottom: 0;
-        }
-
-        li dl {
-            dt {
-                color: var(--gray-8);
-                padding-bottom: 0.5em;
-            }
-
-            dd span {
-                border-radius: 3px;
-                background-color: var(--lime-2);
-                color: var(--lime-8);
-                border: none;
-                transition: all 0.3s ease-in-out;
-            }
-
-            dd span.rdact {
-                color: var(--gray-8);
-                background-color: var(--card-bg);
-            }
-        }
+    li:first-child {
+        padding-bottom: 0;
     }
 
-    /* 对话框底部 */
-    .ui-dialog-buttonpane {
-        padding: 0 0.5em;
-        margin: 0;
-        border-top: 1px solid var(--card-border);
-        background: none;
-        background-color: var(--bg);
+    li dl {
+        dt {
+            color: var(--gray-8);
+            padding-bottom: 0.5em;
+        }
 
-        button {
-            background: none;
+        dd span {
+            border-radius: 3px;
+            background-color: var(--lime-2);
+            color: var(--lime-8);
             border: none;
-            padding: 0.5em 1em;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s ease-in-out;
-            font-weight: bold;
-
-            &:hover {
-                text-decoration: none;
-            }
+            transition: all 0.3s ease-in-out;
         }
 
-        /* 保存 */
-        button:first-child {
-            background-color: var(--button-bg);
-            color: var(--button-text);
-
-            &:hover {
-                background-color: var(--button-bg-hover);
-            }
-        }
-
-        /* 取消 */
-        button:last-child {
+        dd span.rdact {
+            color: var(--gray-8);
             background-color: var(--card-bg);
-            color: var(--gray-9);
+        }
+    }
+}
 
-            &:hover {
-                background-color: var(--gray-3);
-            }
+/* 对话框底部 */
+div[role="dialog"] .ui-dialog-buttonpane {
+    padding: 0 0.5em;
+    margin: 0;
+    border-top: 1px solid var(--card-border);
+    background: none;
+    background-color: var(--bg);
+
+    button {
+        background: none;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease-in-out;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    /* 保存 */
+    button:first-child {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+
+        &:hover {
+            background-color: var(--button-bg-hover);
+        }
+    }
+
+    /* 取消 */
+    button:last-child {
+        background-color: var(--card-bg);
+        color: var(--gray-9);
+
+        &:hover {
+            background-color: var(--gray-3);
         }
     }
 }

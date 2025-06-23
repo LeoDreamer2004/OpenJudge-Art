@@ -23,13 +23,17 @@
         border-left: 3px solid var(--accent-2-text-light);
     }
 
-    pre {
+    .code-wrapper {
         position: relative;
     }
 
-    pre .copy-button {
+    pre {
+        overflow-x: auto;
+    }
+
+    .copy-button {
         position: absolute;
-        right: 1em;
+        right: 0.5em;
         top: 0.5em;
         color: var(--gray-7);
         background-color: var(--card-bg);
@@ -63,7 +67,7 @@
             background-color: var(--button-bg);
             border-radius: 5px;
             color: var(--button-text);
-            border:none;
+            border: none;
 
             a:hover {
                 text-decoration: none;
