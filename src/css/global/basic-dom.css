@@ -192,6 +192,7 @@ input[type="radio"] {
     border: none !important;
     position: relative;
     padding: 0 !important;
+    margin-right: 0.5em;
 
     &:before {
         content: '';
@@ -237,6 +238,7 @@ input[type="checkbox"] {
     appearance: none;
     border: none !important;
     position: relative;
+    margin-right: 0.5em;
 
     &:before {
         content: '';
