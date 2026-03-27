@@ -61,7 +61,7 @@
     a.w_arr_down {
         color: var(--gray-7);
         background: none;
-        background-color: var(--card-bg);
+        background-color: var(--gray-1);
     }
 
     .account-list.dis {
@@ -84,6 +84,12 @@
             img {
                 border-radius: 50%;
             }
+        }
+
+        .line {
+            border-top: 1px solid var(--gray-4);
+            background-color: var(--gray-4);
+            margin: 0.5em 0;
         }
     }
 }

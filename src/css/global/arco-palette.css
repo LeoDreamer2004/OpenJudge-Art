@@ -152,7 +152,6 @@
     --gray-8: #4e5969;
     --gray-9: #272e3b;
     --gray-10: #1d2129;
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -300,16 +299,65 @@
         --magenta-9: #FDC3DB;
         --magenta-10: #FFE8F1;
 
-        --gray-10: #f7f8fa;
-        --gray-9: #f2f3f5;
-        --gray-8: #e5e6eb;
-        --gray-7: #c9cdd4;
-        --gray-6: #a9aeb8;
-        --gray-5: #86909c;
-        --gray-4: #6b7785;
-        --gray-3: #4e5969;
-        --gray-2: #272e3b;
         --gray-1: #1d2129;
+        --gray-2: #272e3b;
+        --gray-3: #4e5969;
+        --gray-4: #6b7785;
+        --gray-5: #86909c;
+        --gray-6: #a9aeb8;
+        --gray-7: #c9cdd4;
+        --gray-8: #e5e6eb;
+        --gray-9: #f2f3f5;
+        --gray-10: #f7f8fa;
+    }
+}
 
+/* transparennt colors */
+
+:root {
+    --cyan-1-tr: #E8FFFBE0;
+    --cyan-2-tr: #B7F4ECE0;
+    --cyan-3-tr: #89E9E0E0;
+    --cyan-4-tr: #5EDFD6E0;
+    --cyan-5-tr: #37D4CFE0;
+    --cyan-6-tr: #14C9C9E0;
+    --cyan-7-tr: #0DA5AAE0;
+    --cyan-8-tr: #07828BE0;
+    --cyan-9-tr: #03616CE0;
+    --cyan-10-tr: #00424DE0;
+    --gray-1-tr: #f7f8faE0;
+    --gray-2-tr: #f2f3f5E0;
+    --gray-3-tr: #e5e6ebE0;
+    --gray-4-tr: #c9cdd4E0;
+    --gray-5-tr: #a9aeb8E0;
+    --gray-6-tr: #86909cE0;
+    --gray-7-tr: #6b7785E0;
+    --gray-8-tr: #4e5969E0;
+    --gray-9-tr: #272e3bE0;
+    --gray-10-tr: #1d2129E0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cyan-1-tr: #00424DC0;
+        --cyan-2-tr: #06616CC0;
+        --cyan-3-tr: #11838BC0;
+        --cyan-4-tr: #1FA6AAC0;
+        --cyan-5-tr: #30C9C9C0;
+        --cyan-6-tr: #3FD4CFC0;
+        --cyan-7-tr: #66DFD7C0;
+        --cyan-8-tr: #90E9E1C0;
+        --cyan-9-tr: #BEF4EDC0;
+        --cyan-10-tr: #F0FFFCC0;
+        --gray-1-tr: #1d2129C0;
+        --gray-2-tr: #272e3bC0;
+        --gray-3-tr: #4e5969C0;
+        --gray-4-tr: #6b7785C0;
+        --gray-5-tr: #86909cC0;
+        --gray-6-tr: #a9aeb8C0;
+        --gray-7-tr: #c9cdd4C0;
+        --gray-8-tr: #e5e6ebC0;
+        --gray-9-tr: #f2f3f5C0;
+        --gray-10-tr: #f7f8faC0;
     }
 }

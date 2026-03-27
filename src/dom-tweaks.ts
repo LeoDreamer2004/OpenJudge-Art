@@ -1,7 +1,8 @@
-import { ALL_ROUTE, INDEX_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, REGISTER_ROUTE, SOLUTION_RUOTE } from "./route";
+import { ALL_ROUTE, INDEX_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, REGISTER_ROUTE, SOLUTION_RUOTE as SOLUTION_ROUTE } from "./route";
 import sentences from './resource/sentences.txt';
 
-function replaceOpenJudgeLogoSubtitle() {
+// 随机替换主页标题
+ALL_ROUTE.addTweak(() => {
     const subtitle = document.querySelector('#siteBody #siteHeader h1.logo a span');
     if (!subtitle) { return; }
     // choose a random sentence from sentences.txt
@@ -15,10 +16,44 @@ function replaceOpenJudgeLogoSubtitle() {
         .catch(error => {
             console.error('Error fetching sentences:', error);
         });
-}
-ALL_ROUTE.addTweak(replaceOpenJudgeLogoSubtitle);
+})
 
-function replaceFooterOJInfo() {
+// 添加壁纸
+ALL_ROUTE.addTweak(() => {
+    const body = document.querySelector('body');
+    if (!body) {
+        return;
+    }
+    const wallpaper = document.createElement('div');
+    wallpaper.className = 'wallpaper';
+    body.insertBefore(wallpaper, body.firstChild);
+})
+
+// 添加 Dock
+// INDEX_ROUTE.addTweak(() => {
+//     const dock = document.createElement('div');
+//     dock.className = 'dock';
+//     const body = document.querySelector('body');
+//     if (!body) {
+//         return;
+//     }
+//     body.appendChild(dock);
+
+//     const settingsButton = document.createElement('button');
+//     settingsButton.className = 'dock-item settings';
+//     dock.appendChild(settingsButton);
+
+//     const helpButton = document.createElement('button');
+//     helpButton.className = 'dock-item help';
+//     dock.appendChild(helpButton);
+
+//     const aboutButton = document.createElement('button');
+//     aboutButton.className = 'dock-item about';
+//     dock.appendChild(aboutButton);
+// })
+
+// 替换页脚信息
+INDEX_ROUTE.addTweak(() => {
     const ojInfo = document.querySelector('#footer ul.oj-info li');
     if (!ojInfo) {
         return;
@@ -29,18 +64,18 @@ function replaceFooterOJInfo() {
     if (languageSwitch) {
         languageSwitch.remove();
     }
-}
-INDEX_ROUTE.addTweak(replaceFooterOJInfo);
+})
 
-function replaceIndexApplyGroup() {
+// 替换主页申请小组信息
+INDEX_ROUTE.addTweak(() => {
     const applyGroup = document.querySelector('#side .appli-group');
     if (applyGroup) {
         applyGroup.innerHTML = `<strong>欢迎来到 OpenJudge ... Art 版！</strong><a href="http://openjudge.cn/groups/new">创建小组</a>`
     }
-}
-INDEX_ROUTE.addTweak(replaceIndexApplyGroup);
+})
 
-function moveIndexTitleToWrapper() {
+// 将主页标题和比赛状态移动到一个新的 wrapper 中
+INDEX_ROUTE.addTweak(() => {
     const main = document.querySelector('#main');
     if (!main) {
         return;
@@ -58,10 +93,10 @@ function moveIndexTitleToWrapper() {
         wrapper.appendChild(running);
     }
     main.insertBefore(wrapper, main.firstChild);
-}
-INDEX_ROUTE.addTweak(moveIndexTitleToWrapper);
+})
 
-function moveLimitsToPracticeEnd() {
+// 将练习页面的限制信息移动到要求部分的末尾
+PRACTICE_ROUTE.addTweak(() => {
     const problemParams = document.querySelector('.problem-page .problem-params');
     const problemContent = document.querySelector('.problem-page .problem-content');
 
@@ -73,10 +108,10 @@ function moveLimitsToPracticeEnd() {
         dd.appendChild(problemParams);
         problemContent.appendChild(dd);
     }
-};
-PRACTICE_ROUTE.addTweak(moveLimitsToPracticeEnd);
+})
 
-function addCopyButtonOnSampleCode() {
+// 为代码块添加复制按钮
+PRACTICE_ROUTE.addTweak(() => {
     const pres = document.querySelectorAll('.problem-content pre');
 
     pres.forEach(pre => {
@@ -86,12 +121,7 @@ function addCopyButtonOnSampleCode() {
 
         copyButton.addEventListener('click', () => {
             let code = pre.textContent || '';
-
-            // Remove trailing "复制" if exists
-            const lastIndex = code.lastIndexOf('复制');
-            if (lastIndex !== -1) {
-                code = code.substring(0, lastIndex).trim();
-            }
+            code = code.replace(/\u00A0/g, ' '); // fix: non-breaking space to normal space
 
             const textArea = document.createElement('textarea');
             textArea.value = code;
@@ -121,10 +151,10 @@ function addCopyButtonOnSampleCode() {
             wrapper.appendChild(copyButton);
         }
     });
-}
-PRACTICE_ROUTE.addTweak(addCopyButtonOnSampleCode);
+});
 
-function removeStyleOfPracticeDescription() {
+// 移除练习页面描述中的所有 style 属性
+PRACTICE_ROUTE.addTweak(() => {
     const description = document.querySelector('.problem-page .problem-content dd');
     // remove all style attributes from the description
     if (description) {
@@ -135,10 +165,10 @@ function removeStyleOfPracticeDescription() {
             span.removeAttribute('style');
         });
     }
-}
-PRACTICE_ROUTE.addTweak(removeStyleOfPracticeDescription);
+})
 
-function practiceSubmitStatusTitleTweak() {
+// 将提交状态的标题移动到提交状态的最前面
+SOLUTION_ROUTE.addTweak(() => {
     const main = document.querySelector('.submitStatus');
     if (!main) {
         console.error('Main element not found');
@@ -156,10 +186,10 @@ function practiceSubmitStatusTitleTweak() {
     }
     main.insertBefore(statusAnchor, main.firstChild);
     statusTitle.remove();
-}
-SOLUTION_RUOTE.addTweak(practiceSubmitStatusTitleTweak);
+})
 
-function moveRelatedProblemsToInfomation() {
+// 将评分按钮和相关题目移动到信息栏
+SOLUTION_ROUTE.addTweak(() => {
     const infomation = document.querySelector('#side .compile-info');
 
     const ratingButton = document.querySelector('button#create-rating');
@@ -172,21 +202,20 @@ function moveRelatedProblemsToInfomation() {
         console.log('relatedProblems :>> ', relatedProblems);
         infomation.appendChild(relatedProblems);
     }
-}
-SOLUTION_RUOTE.addTweak(moveRelatedProblemsToInfomation);
+})
 
-function moveNotificationToContestDescription() {
+// 将比赛描述中的通知移动到描述的最前面
+MATCH_ROUTE.addTweak(() => {
     const description = document.querySelector('#main .contest-description');
     const notification = document.querySelector('#side .notification');
     console.log('notification :>> ', description);
     if (description && notification) {
         description.insertBefore(notification, description.firstChild);
     }
-}
-MATCH_ROUTE.addTweak(moveNotificationToContestDescription);
+})
 
-
-function renameRegisterTitle() {
+// 重命名注册页面的标题，添加一个副标题
+REGISTER_ROUTE.addTweak(() => {
     const title = document.querySelector('#main h2');
     if (title) {
         title.textContent = '欢迎来到 OpenJudge';
@@ -195,5 +224,4 @@ function renameRegisterTitle() {
         subtitle.className = 'subtitle';
         title.insertAdjacentElement('afterend', subtitle);
     }
-}
-REGISTER_ROUTE.addTweak(renameRegisterTitle);
+})

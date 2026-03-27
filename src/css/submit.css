@@ -47,13 +47,11 @@
 #submit form#solution_submit textarea {
     outline: none;
     min-width: 630px;
-    background-color: var(--gray-3);
     color: var(--gray-9);
-    border: 1px solid var(--gray-6);
     border-radius: 5px;
     padding: 0.5em;
     margin-top: 1em;
-    font-family: "Courier New", Courier, monospace;
+    font-family: var(--font-mono);
     font-size: 14px;
 }
 

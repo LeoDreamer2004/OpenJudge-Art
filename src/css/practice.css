@@ -53,6 +53,7 @@
         font-size: 13px;
         color: var(--gray-8);
         padding: 0.5em;
+        padding-left: 0;
         margin: 1em 0;
         line-height: 1.5;
         border: none;

@@ -1,0 +1,168 @@
+@import "./common.css";
+@import "./components/header-top.css";
+@import "./components/practice-header.css";
+
+
+#pagebody #main a {
+    color: var(--blue-8);
+}
+
+/* 通用表格 */
+#pagebody #main table {
+    background-color: transparent;
+    background: none;
+    border: 1px solid var(--card-border);
+
+    th {
+        color: var(--accent-1-text-dark);
+        background: none;
+    }
+
+    a {
+        color: var(--accent-1-text);
+    }
+
+    a[href*="edit"] {
+        color: var(--green-7);
+    }
+
+    a[onclick*="api.leaveGroup"] {
+        color: var(--red-7);
+    }
+
+    td.date, td.activated, td.submit-time {
+        color: var(--text-weaker);
+    }
+}
+
+#pagebody #main textarea, #pagebody #main input {
+    margin-right: 0.5em;
+    border: 1px solid var(--card-border);
+}
+
+#pagebody #main textarea[name="sampleInput"], #pagebody #main textarea[name="sampleOutput"] {
+    font-family: var(--font-mono);
+}
+
+/* 顶部导航栏 */
+#headerTop {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--card-border);
+}
+
+#headerTop h1.logo a {
+    color: var(--accent-2-text);
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+
+    img {
+        border-radius: 50%;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: var(--accent-1-text);
+    }
+}
+
+#headerTop #userToolbar {
+    li {
+        color: var(--text-weak);
+        margin-right: 0.5em;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    a {
+        color: var(--text-weaker);
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+/* 侧边导航栏 */
+#pagebody #side .navi-menu li a {
+    background: none;
+    border: none;
+    color: var(--accent-2-text);
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: var(--accent-1-text);
+    }
+}
+
+#pagebody #side .navi-menu li ul.hide {
+    background-color: transparent;
+    border: none;
+}
+
+/* 大标题 */
+header h2 {
+    color: var(--accent-1-text);
+}
+
+/* 编辑题目 */
+#pagebody #main.problems-edit form {
+    dt {
+        color: var(--accent-1-text);
+        font-weight: bold;
+    }
+
+    textarea, input {
+        max-width: none;
+    }
+
+    .upload-data {
+        background-color: var(--card-bg);
+        border-radius: 5px;
+        border: 1px solid var(--card-border);
+        margin-bottom: 1em;
+
+        .description {
+            color: var(--text-weaker);
+        }
+
+        h4 {
+            display: none;
+        }
+
+        .uploadifive-button {
+            background-color: var(--card-bg-dark);
+            border: none;
+            background-image: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: var(--cyan-4);
+            }
+        }
+    }
+}
+
+#pagebody #main .level-nav.contest-nav {
+    border: none;
+
+    li {
+        background-color: var(--accent-1-bg);
+        border-radius: 3px;
+        border: none;
+
+        a {
+            color: var(--accent-1-text);
+        }
+    }
+
+    li.current {
+        background-color: var(--accent-1-bg-dark);
+
+        a {
+            color: var(--accent-1-text-dark);
+        }
+    }
+}

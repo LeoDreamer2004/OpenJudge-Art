@@ -3,8 +3,12 @@
 
 /* 比赛表格 */
 .contest-intro {
+    &>div:nth-child(odd) {
+        background-color: var(--bg);
+    }
+    
     &>div:nth-child(even) {
-        background-color: var(--gray-2);
+        background-color: var(--card-bg);
     }
 
     h1 {

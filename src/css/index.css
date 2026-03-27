@@ -40,7 +40,7 @@
     padding-left: 0;
     margin-top: 1em;
     margin-bottom: 0;
-    background-color: var(--card-bg);
+    background-color: transparent;
     border-top-color: var(--card-border);
     height: 200px;
 }
@@ -213,4 +213,33 @@
 
 #siteBody #footer .wrapper {
     border-top: 1px solid var(--card-border);
+}
+
+/* 屏幕右侧 dock 栏 */
+.dock {
+    position: fixed;
+    right: 30px;
+    top: 30%;
+
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 9999px;
+    padding: 1em .5em;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transform: translate(-2px, 2px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.dock button.dock-item {
+    display: block;
+    margin: 1em 0;
+    background-color: var(--card-bg);
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
 }

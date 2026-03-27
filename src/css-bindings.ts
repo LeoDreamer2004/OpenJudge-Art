@@ -18,9 +18,10 @@ import searchStyles from './css/search.css?inline';
 import solutionStyles from './css/solution.css?inline';
 import statisticsStyles from './css/statistics.css?inline';
 import userStyles from './css/user.css?inline';
+import adminStyles from './css/admin.css?inline';
 import {
     GROUP_ROUTE, GROUPS_ROUTE, CONTESTS_RUNNING_ROUTE, MESSAGES_ROUTE, INDEX_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, HELP_ROUTE, ABOUT_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, HINT_ROUTE, RANKING_ROUTE, SETTINGS_ROUTE, STATISTICS_ROUTE, SUBMIT_ROUTE,
-    SEARCH_ROUTE, SOLUTION_RUOTE, USER_ROUTE, GENERAL_ROUTE
+    SEARCH_ROUTE, SOLUTION_RUOTE, ADMIN_ROUTE, USER_ROUTE, GENERAL_ROUTE
 } from './route';
 
 INDEX_ROUTE.bindCss(indexStyles, 'index');
@@ -41,6 +42,7 @@ SUBMIT_ROUTE.bindCss(submitStyles, 'submit');
 SEARCH_ROUTE.bindCss(searchStyles, 'search');
 SOLUTION_RUOTE.bindCss(solutionStyles, 'solution');
 STATISTICS_ROUTE.bindCss(statisticsStyles, 'statistics');
+ADMIN_ROUTE.bindCss(adminStyles, 'admin');
 USER_ROUTE.bindCss(userStyles, 'user');
 GENERAL_ROUTE.bindCss(generalStyles, 'general');
 

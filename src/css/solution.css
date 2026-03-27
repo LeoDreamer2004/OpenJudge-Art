@@ -105,7 +105,7 @@ pre.sh_sourceCode {
     }
 
     .sh_string {
-        font-family: "Courier New", Courier, monospace;
+        font-family: var(--font-mono);
         color: var(--orangered-6);
     }
 

@@ -2,17 +2,22 @@
 @import "./components/site-header.css";
 
 /* 左侧导航栏 */
-#side.group-panel ul {
+#side.group-panel {
+    width: auto;
+}
+
+#side.group-panel ul {    
     li {
         display: block;
         padding: 0.5em;
         font-weight: bold;
         border-bottom: 1px dotted var(--card-border);
         text-align: right;
+        transition: all 0.3s ease;
 
         a {
             color: var(--accent-1-text);
-            padding-right: 1em;
+            padding: 0 1em;
 
             &:hover {
                 background-color: transparent;
@@ -55,8 +60,9 @@
 #main.groups-category h1 {
     color: var(--accent-1-text);
     background-color: var(--accent-1-bg-dark);
-    padding: 0.2em;
+    padding: 0;
     padding-left: 0.5em;
+    line-height: 2;
     border-left: 3px solid var(--accent-1-text);
 }
 

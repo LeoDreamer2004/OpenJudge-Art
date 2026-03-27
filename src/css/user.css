@@ -37,7 +37,7 @@
     }
 
     .badges div {
-        background-color: var(--card-bg);
+        background-color: transparent;
         border-left: 2px solid var(--gray-3);
         padding-left: 1em;
 

@@ -1,10 +1,10 @@
 :root {
     /* accent 1: cyan */
-    --accent-1-bg: var(--cyan-1);
+    --accent-1-bg: var(--cyan-1-tr);
     --accent-1-bg-dark: var(--cyan-2);
     --accent-1-bg-darker: var(--cyan-3);
-    --accent-1-border: var(--cyan-2);
-    --accent-1-border-dark: var(--cyan-3);
+    --accent-1-border: var(--cyan-2-tr);
+    --accent-1-border-dark: var(--cyan-3-tr);
     --accent-1-text: var(--cyan-7);
     --accent-1-text-dark: var(--cyan-9);
 
@@ -23,15 +23,16 @@
     --text-weak: var(--gray-7);
     --text-weaker: var(--gray-6);
     --date-text: var(--orangered-7);
-    --bg: var(--gray-1);
-    --card-bg: var(--gray-2);
-    --card-bg-dark: var(--gray-3);
-    --card-border: var(--gray-3);
+    --bg: var(--gray-1-tr);
+    --card-bg: var(--gray-2-tr);
+    --card-bg-dark: var(--gray-3-tr);
+    --card-border: var(--gray-3-tr);
     --anchor: var(--blue-7);
     --anchor-hover: var(--blue-9);
     --button-bg: var(--blue-3);
     --button-bg-hover: var(--blue-4);
     --button-text: var(--blue-9);
+    --font-mono: "Courier New", Courier, monospace;
 }
 
 p,
@@ -92,44 +93,51 @@ table {
 
             td,
             th {
-
-                /* 两端的格子圆角 */
-                &:first-child {
-                    border-top-left-radius: 5px;
-                }
-
-                &:last-child {
-                    border-top-right-radius: 5px;
-                }
-
                 border-bottom: 1px dotted var(--gray-4) !important;
                 padding: 0.2em 0.5em !important;
             }
         }
+    }
 
-        tr:last-child {
+    tbody tr:first-child {
 
-            td,
-            th {
-                border-bottom: none !important;
+        td,
+        th {
 
-                &:first-child {
-                    border-bottom-left-radius: 5px;
-                }
+            /* 两端的格子圆角 */
+            &:first-child {
+                border-top-left-radius: 5px;
+            }
 
-                &:last-child {
-                    border-bottom-right-radius: 5px;
-                }
+            &:last-child {
+                border-top-right-radius: 5px;
+            }
+        }
+    }
+
+    tbody tr:last-child,
+    tfoot tr:last-child {
+
+        td,
+        th {
+            border-bottom: none !important;
+
+            &:first-child {
+                border-bottom-left-radius: 5px;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: 5px;
             }
         }
     }
 
     tr:nth-child(even) {
-        background-color: var(--gray-2);
+        background-color: var(--bg);
     }
 
     tr:nth-child(odd) {
-        background-color: var(--gray-1);
+        background-color: var(--card-bg);
     }
 
     tr td:not(.result) a {
@@ -151,7 +159,7 @@ pre {
     padding: 0.5em;
     overflow-x: auto;
     margin-bottom: 0.5em;
-    font-family: "Courier New", Courier, monospace;
+    font-family: var(--font-mono);
     color: var(--gray-8);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -238,7 +246,8 @@ input[type="checkbox"] {
     appearance: none;
     border: none !important;
     position: relative;
-    margin-right: 0.5em;
+    margin-right: 0.5em !important;
+    padding: 0 !important;
 
     &:before {
         content: '';
@@ -292,4 +301,9 @@ button {
         background-color: var(--button-bg-hover);
         text-decoration: none;
     }
+}
+
+select option {
+    background-color: var(--card-bg);
+    color: var(--card-text);
 }
