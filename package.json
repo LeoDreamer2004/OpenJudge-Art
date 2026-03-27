@@ -1,7 +1,7 @@
 {
   "name": "openjudge-art",
   "private": true,
-  "version": "1.1.8",
+  "version": "1.1.9",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "typescript": "^5.7.2",
-    "vite": "^6.0.5",
-    "vite-plugin-monkey": "^5.0.3"
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1",
+    "vite-plugin-monkey": "^7.1.9"
   }
 }
