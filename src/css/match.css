@@ -1,6 +1,7 @@
 @import "./common.css";
 @import "./components/header-top.css";
 @import "./components/practice-header.css";
+@import "./components/practice-title.css";
 
 :root {
     --contest-width: 800px;

@@ -26,7 +26,8 @@
         color: var(--green-7);
     }
 
-    a[onclick*="api.leaveGroup"] {
+    a[onclick*="api.leave"],
+    a[onclick*="api.delete"] {
         color: var(--red-7);
     }
 
@@ -86,14 +87,31 @@
 }
 
 /* 侧边导航栏 */
-#pagebody #side .navi-menu li a {
-    background: none;
-    border: none;
-    color: var(--accent-2-text);
-    transition: all 0.3s ease;
+#pagebody #side .navi-menu li {
+    a {
+        background: none;
+        border: none;
+        color: var(--accent-2-text);
+        transition: all 0.3s ease;
 
-    &:hover {
-        color: var(--accent-1-text);
+        &:hover {
+            color: var(--accent-1-text);
+        }
+    }
+
+    .nav-toggle {
+        background: none;
+
+        &::before {
+            content: var(--i-down);
+            transform: rotate(90deg) scale(90%);
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover::before {
+            transform: rotate(0deg) scale(100%) translateY(10%) translateX(10%);
+        }
     }
 }
 
@@ -165,4 +183,8 @@ header h2 {
             color: var(--accent-1-text-dark);
         }
     }
+}
+
+#pagebody #main .description {
+    color: var(--text-weaker);
 }

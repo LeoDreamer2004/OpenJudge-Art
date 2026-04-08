@@ -30,27 +30,27 @@ ALL_ROUTE.addTweak(() => {
 })
 
 // 添加 Dock
-// INDEX_ROUTE.addTweak(() => {
-//     const dock = document.createElement('div');
-//     dock.className = 'dock';
-//     const body = document.querySelector('body');
-//     if (!body) {
-//         return;
-//     }
-//     body.appendChild(dock);
+INDEX_ROUTE.addTweak(() => {
+    const dock = document.createElement('div');
+    dock.className = 'dock';
+    const body = document.querySelector('body');
+    if (!body) {
+        return;
+    }
+    body.appendChild(dock);
 
-//     const settingsButton = document.createElement('button');
-//     settingsButton.className = 'dock-item settings';
-//     dock.appendChild(settingsButton);
+    const settingsButton = document.createElement('button');
+    settingsButton.className = 'dock-item settings';
+    dock.appendChild(settingsButton);
 
-//     const helpButton = document.createElement('button');
-//     helpButton.className = 'dock-item help';
-//     dock.appendChild(helpButton);
+    const helpButton = document.createElement('button');
+    helpButton.className = 'dock-item help';
+    dock.appendChild(helpButton);
 
-//     const aboutButton = document.createElement('button');
-//     aboutButton.className = 'dock-item about';
-//     dock.appendChild(aboutButton);
-// })
+    const aboutButton = document.createElement('button');
+    aboutButton.className = 'dock-item about';
+    dock.appendChild(aboutButton);
+})
 
 // 替换页脚信息
 INDEX_ROUTE.addTweak(() => {
