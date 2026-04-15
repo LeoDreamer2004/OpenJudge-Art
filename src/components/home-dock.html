@@ -1,0 +1,32 @@
+<button class="dock-item settings" type="button" aria-label="主页设置"></button>
+<button class="dock-item help" type="button" aria-label="帮助"></button>
+<button class="dock-item about" type="button" aria-label="关于"></button>
+
+<div class="dock-menu">
+    <div class="dock-menu-header">
+        <div class="dock-menu-title">设置</div>
+        <div class="dock-menu-preview">设置会自动保存在当前浏览器中</div>
+    </div>
+
+    <h3 class="dock-menu-section-title">外观</h3>
+    <label class="dock-field">
+        <div class="dock-field-inline">
+            <p>背景图片</p>
+            <input type="text" name="bgImageUrl" id="bgImageUrlInput" placeholder="输入图片 URL" />
+        </div>
+    </label>
+
+    <h3 class="dock-menu-section-title">扩展包</h3>
+
+    <label class="dock-field">
+        <div class="dock-field-inline">
+            <p>三国扩展包（测试版）</p>
+            <input type="checkbox" name="sanGuoExtension" id="sanGuoExtCheckbox" />
+        </div>
+        <div class="dock-field-hint">刷新页面生效</div>
+    </label>
+
+    <div class="dock-menu-actions">
+        <button type="button" class="dock-reset-btn">恢复默认</button>
+    </div>
+</div>

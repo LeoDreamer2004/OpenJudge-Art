@@ -25,6 +25,7 @@
     --date-text: var(--orangered-7);
     --bg: var(--gray-1-tr);
     --card-bg: var(--gray-2-tr);
+    --card-bg-solid: var(--gray-2);
     --card-bg-dark: var(--gray-3-tr);
     --card-border: var(--gray-3-tr);
     --anchor: var(--blue-7);

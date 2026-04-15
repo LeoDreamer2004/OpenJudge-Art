@@ -1,0 +1,192 @@
+/* 屏幕右侧 dock 栏 */
+.dock {
+    position: fixed;
+    right: 30px;
+    top: 30%;
+
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 9999px;
+    padding: 1em .5em;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transform: translate(-2px, 2px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.dock button.dock-item {
+    display: block;
+    margin: 1em 0;
+    background-color: var(--card-bg);
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    position: relative;
+}
+
+.dock {
+    position: fixed;
+    right: 30px;
+    top: 30%;
+    z-index: 9999;
+    transform-origin: right center;
+}
+
+.dock .dock-item {
+    cursor: pointer;
+}
+
+.dock .dock-item.settings::before,
+.dock .dock-item.help::before,
+.dock .dock-item.about::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.dock .dock-item.settings::before {
+    content: "⚙";
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.dock .dock-item.help::before {
+    content: "?";
+    font-weight: bold;
+}
+
+.dock .dock-item.about::before {
+    content: "i";
+    font-weight: bold;
+}
+
+.dock .dock-item:hover::before {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.dock-menu {
+    position: absolute;
+    right: calc(100% + 14px);
+    top: 50%;
+    width: 290px;
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg-solid);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(8px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.dock-menu-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-2-text);
+    margin: 16px 0 8px;
+}
+
+.dock.open .dock-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+}
+
+.dock-menu-header {
+    margin-bottom: 12px;
+}
+
+.dock-menu-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-2-text);
+    border-bottom: 2px solid var(--card-border);
+    padding-bottom: 6px;
+}
+
+.dock-menu-preview {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--gray-7);
+    line-height: 1.5;
+    min-height: 18px;
+}
+
+.dock-field {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.dock-field-top,
+.dock-field-inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.dock-field input[type="range"] {
+    width: 100%;
+    margin-top: 8px;
+    accent-color: var(--accent-2-text);
+}
+
+.dock-field input[type="text"] {
+    width: 70%;
+    box-sizing: border-box;
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    color: var(--gray-9);
+    outline: none;
+}
+
+.dock-field input[type="text"]:focus {
+    border-color: var(--accent-2-text);
+}
+
+.dock-field input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-2-text);
+}
+
+.dock-menu-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dock-reset-btn {
+    border: 1px solid var(--card-border);
+    background: transparent;
+    color: var(--accent-2-text);
+    border-radius: 999px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.dock-field-hint {
+    font-size: 11px;
+    color: var(--text-weak);
+    margin-top: 4px;
+    line-height: 1.4;
+    padding-left: 2px;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s;
+}
+
+.dock-field-inline p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-9);
+}

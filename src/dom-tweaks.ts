@@ -1,12 +1,16 @@
 import { ALL_ROUTE, INDEX_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, REGISTER_ROUTE, SOLUTION_RUOTE as SOLUTION_ROUTE } from "./route";
 import sentences from './resource/sentences.txt';
+import sentencesSgs from './resource/sentences-sgs.txt';
+import { HomeDock } from './components/home-dock';
 
 // 随机替换主页标题
 ALL_ROUTE.addTweak(() => {
     const subtitle = document.querySelector('#siteBody #siteHeader h1.logo a span');
     if (!subtitle) { return; }
     // choose a random sentence from sentences.txt
-    fetch(sentences)
+    // document.body.classList.toggle('enable-sanguo-extension', settings.sanGuoExtension);
+    const mode = document.body.classList.contains('enable-sanguo-extension') ? sentencesSgs : sentences;
+    fetch(mode)
         .then(response => response.text())
         .then(text => {
             const sentencesArray = text.split('\n').filter(line => line.trim() !== '');
@@ -31,26 +35,20 @@ ALL_ROUTE.addTweak(() => {
 
 // 添加 Dock
 INDEX_ROUTE.addTweak(() => {
-    const dock = document.createElement('div');
-    dock.className = 'dock';
     const body = document.querySelector('body');
-    if (!body) {
-        return;
-    }
-    body.appendChild(dock);
+    if (!body) return;
 
-    const settingsButton = document.createElement('button');
-    settingsButton.className = 'dock-item settings';
-    dock.appendChild(settingsButton);
+    const dock = new HomeDock(body, {
+        onHelpClick: () => {
+            window.location.href = 'http://openjudge.cn/help.html';
+        },
+        onAboutClick: () => {
+            window.location.href = 'http://openjudge.cn/about.html';
+        },
+    });
 
-    const helpButton = document.createElement('button');
-    helpButton.className = 'dock-item help';
-    dock.appendChild(helpButton);
-
-    const aboutButton = document.createElement('button');
-    aboutButton.className = 'dock-item about';
-    dock.appendChild(aboutButton);
-})
+    dock.mount();
+});
 
 // 替换页脚信息
 INDEX_ROUTE.addTweak(() => {
