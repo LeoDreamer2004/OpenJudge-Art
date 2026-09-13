@@ -12,8 +12,8 @@ OpenJudge 的美化样式。
 注意，由于需要对原页面 DOM 元素进行修改，因此本插件仅支持 js 版本。
 
 1. 在浏览器中安装 [Tampermonkey](https://www.tampermonkey.net/) 插件。
-2. 在 release 页面下载最新的 js 发布版。
-3. 在 Tampermonkey 中添加此新脚本。
+2. 在 [release 页面](https://github.com/LeoDreamer2004/OpenJudge-Art/releases) 下载最新的 [js 发布版](https://github.com/LeoDreamer2004/OpenJudge-Art/releases/latest)。
+3. 在 Tampermonkey 中添加此新脚本。（通常情况下点击此下载链接即会自动跳转到油猴安装页面）
 
 ## 贡献
 
