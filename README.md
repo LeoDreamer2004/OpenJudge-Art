@@ -2,7 +2,10 @@
 
 OpenJudge 的美化样式。
 
-受到 [PKU-Art](https://github.com/zhuozhiyongde/PKU-Art) 的启发，大体沿用了其基本框架。
+| ![首页](./src/resource/index-demo.png) | ![比赛页](./src/resource/contest-demo.png) |
+| :---: | :---: |
+
+受到 [PKU-Art](https://github.com/zhuozhiyongde/PKU-Art) 的启发，一定程度上参考了其基本框架。
 
 ## 使用方法
 
