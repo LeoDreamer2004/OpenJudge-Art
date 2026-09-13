@@ -1,14 +1,13 @@
 import sentences from './resource/sentences.txt';
 import sentencesSgs from './resource/sentences-sgs.txt';
 import { HomeDock } from './components/home-dock';
+import { readHomeDockSettings } from './components/home-dock-settings';
 
 // 随机替换主页标题
 export function randomizeSubtitle(): void {
     const subtitle = document.querySelector('#siteBody #siteHeader h1.logo a span');
     if (!subtitle) { return; }
-    // choose a random sentence from sentences.txt
-    // document.body.classList.toggle('enable-sanguo-extension', settings.sanGuoExtension);
-    const mode = document.body.classList.contains('enable-sanguo-extension') ? sentencesSgs : sentences;
+    const mode = readHomeDockSettings().sanGuoExtension ? sentencesSgs : sentences;
     fetch(mode)
         .then(response => response.text())
         .then(text => {
@@ -194,7 +193,8 @@ export function decorateRegisterTitle(): void {
     if (title) {
         title.textContent = '欢迎来到 OpenJudge';
         const subtitle = document.createElement('p');
-        subtitle.textContent = '一入算法深似海，从此节操是路人';
+        subtitle.textContent = readHomeDockSettings().sanGuoExtension ?
+            '今天下英雄，惟使君与操耳' : '一入算法深似海，从此节操是路人';
         subtitle.className = 'subtitle';
         title.insertAdjacentElement('afterend', subtitle);
     }

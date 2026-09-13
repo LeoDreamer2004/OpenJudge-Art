@@ -183,3 +183,9 @@ header h2 {
 #pagebody #main .description {
     color: var(--text-weaker);
 }
+
+/* 测试点上传 */
+.uploadifive-queue-item {
+    background-color: var(--card-bg);
+    border-bottom: 1px dotted var(--card-border);
+}

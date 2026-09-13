@@ -1,17 +1,18 @@
 import { defineConfig } from 'vite';
 import monkey from 'vite-plugin-monkey';
-import { beginPageLoading } from './src/page-loading';
+import { beginPageLoading } from './src/page-loading.ts';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    rollupOptions: {
-      output: { inlineDynamicImports: true },
+    rolldownOptions: {
+      output: { codeSplitting: false },
     },
   },
   plugins: [
     monkey({
       entry: 'src/main.ts',
+      build: { systemjs: 'inline' },
       generate: ({ userscript, mode }) => mode === 'meta'
         ? userscript
         : `${userscript}\n;(${beginPageLoading.toString()})();\n`,
@@ -21,6 +22,7 @@ export default defineConfig({
         description: 'Beautify your OpenJudge experience.',
         namespace: 'leodreamer/openjudge-art',
         match: ['*://*.openjudge.cn/*'],
+        grant: ['GM_getValue', 'GM_setValue'],
         connect: ['pku.edu.cn'],
         license: 'MIT',
         updateURL: 'https://github.com/LeoDreamer2004/OpenJudge-Art/releases',

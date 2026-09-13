@@ -1,3 +1,5 @@
+import { GM_getValue, GM_setValue } from 'vite-plugin-monkey/dist/client';
+
 interface SettingControl<T> {
     event: 'input' | 'change';
     read(element: HTMLInputElement): T;
@@ -7,10 +9,10 @@ interface SettingControl<T> {
 class Setting<T extends string | boolean> {
     constructor(
         public readonly defaultValue: T,
-        /** Apply a value to the page. */
-        private readonly effect: (value: T) => void,
         /** Control behavior for the input element. */
         private readonly control: SettingControl<T>,
+        /** Optional immediate effect; flags can be read by their consumers. */
+        private readonly effect?: (value: T) => void,
     ) { }
 
     read(raw: unknown): T {
@@ -19,14 +21,16 @@ class Setting<T extends string | boolean> {
     }
 
     apply(raw: unknown): void {
-        this.effect(this.read(raw));
+        this.effect?.(this.read(raw));
     }
 
     bind(element: HTMLInputElement, value: unknown, onChange: (value: T) => void, signal: AbortSignal) {
         const update = (raw: unknown) => this.control.write(element, this.read(raw));
         update(value);
         element.addEventListener(this.control.event, () => {
-            onChange(this.read(this.control.read(element)));
+            const value = this.read(this.control.read(element));
+            onChange(value);
+            this.apply(value);
         }, { signal });
         return update;
     }
@@ -36,6 +40,11 @@ class Setting<T extends string | boolean> {
 const fields = {
     bgImageUrl: new Setting<string>(
         '',
+        {
+            event: 'input',
+            read: element => element.value,
+            write: (element, value) => { element.value = value; },
+        },
         value => {
             let wallpaper = document.body.querySelector<HTMLDivElement>('.wallpaper');
             if (!wallpaper) {
@@ -47,15 +56,9 @@ const fields = {
                 `\\${character.charCodeAt(0).toString(16)} `);
             wallpaper.style.backgroundImage = url ? `url("${url}")` : 'none';
         },
-        {
-            event: 'input',
-            read: element => element.value,
-            write: (element, value) => { element.value = value; },
-        },
     ),
     sanGuoExtension: new Setting<boolean>(
         false,
-        value => document.body.classList.toggle('enable-sanguo-extension', value),
         {
             event: 'change',
             read: element => element.checked,
@@ -84,22 +87,22 @@ const STORAGE_KEY = 'openjudge-art:home-dock-settings';
 
 export function readHomeDockSettings(): HomeDockSettings {
     try {
-        return normalizeSettings(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null'));
+        const stored = GM_getValue<unknown>(STORAGE_KEY);
+        if (stored !== undefined) return normalizeSettings(stored);
     } catch (error) {
         console.warn('Failed to read dock settings:', error);
-        return defaultHomeDockSettings();
     }
+    return defaultHomeDockSettings();
 }
 
 // Form values and persisted JSON cross a runtime validation boundary here.
 export function saveHomeDockSettings(raw: unknown): HomeDockSettings {
     const settings = normalizeSettings(raw);
     try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        GM_setValue(STORAGE_KEY, settings);
     } catch (error) {
         console.warn('Failed to save dock settings:', error);
     }
-    applyHomeDockSettings(settings);
     return settings;
 }
 
@@ -123,6 +126,7 @@ export function bindHomeDockSettings(root: HTMLElement, signal: AbortSignal): ()
 
     return () => {
         settings = saveHomeDockSettings(defaultHomeDockSettings());
+        applyHomeDockSettings(settings);
         for (const { key, update } of bindings) {
             update(settings[key as keyof HomeDockSettings]);
         }
