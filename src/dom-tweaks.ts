@@ -1,10 +1,9 @@
-import { ALL_ROUTE, INDEX_ROUTE, MATCH_ROUTE, PRACTICE_ROUTE, REGISTER_ROUTE, SOLUTION_RUOTE as SOLUTION_ROUTE } from "./route";
 import sentences from './resource/sentences.txt';
 import sentencesSgs from './resource/sentences-sgs.txt';
 import { HomeDock } from './components/home-dock';
 
 // 随机替换主页标题
-ALL_ROUTE.addTweak(() => {
+export function randomizeSubtitle(): void {
     const subtitle = document.querySelector('#siteBody #siteHeader h1.logo a span');
     if (!subtitle) { return; }
     // choose a random sentence from sentences.txt
@@ -20,38 +19,15 @@ ALL_ROUTE.addTweak(() => {
         .catch(error => {
             console.error('Error fetching sentences:', error);
         });
-})
-
-// 添加壁纸
-ALL_ROUTE.addTweak(() => {
-    const body = document.querySelector('body');
-    if (!body) {
-        return;
-    }
-    const wallpaper = document.createElement('div');
-    wallpaper.className = 'wallpaper';
-    body.insertBefore(wallpaper, body.firstChild);
-})
+}
 
 // 添加 Dock
-INDEX_ROUTE.addTweak(() => {
-    const body = document.querySelector('body');
-    if (!body) return;
-
-    const dock = new HomeDock(body, {
-        onHelpClick: () => {
-            window.location.href = 'http://openjudge.cn/help.html';
-        },
-        onAboutClick: () => {
-            window.location.href = 'http://openjudge.cn/about.html';
-        },
-    });
-
-    dock.mount();
-});
+export function mountHomeDock(): void {
+    new HomeDock(document.body).mount();
+}
 
 // 替换页脚信息
-INDEX_ROUTE.addTweak(() => {
+export function replaceFooter(): void {
     const ojInfo = document.querySelector('#footer ul.oj-info li');
     if (!ojInfo) {
         return;
@@ -62,18 +38,18 @@ INDEX_ROUTE.addTweak(() => {
     if (languageSwitch) {
         languageSwitch.remove();
     }
-})
+}
 
 // 替换主页申请小组信息
-INDEX_ROUTE.addTweak(() => {
+export function replaceGroupWelcome(): void {
     const applyGroup = document.querySelector('#side .appli-group');
     if (applyGroup) {
         applyGroup.innerHTML = `<strong>欢迎来到 OpenJudge ... Art 版！</strong><a href="http://openjudge.cn/groups/new">创建小组</a>`
     }
-})
+}
 
 // 将主页标题和比赛状态移动到一个新的 wrapper 中
-INDEX_ROUTE.addTweak(() => {
+export function wrapRunningContests(): void {
     const main = document.querySelector('#main');
     if (!main) {
         return;
@@ -91,10 +67,10 @@ INDEX_ROUTE.addTweak(() => {
         wrapper.appendChild(running);
     }
     main.insertBefore(wrapper, main.firstChild);
-})
+}
 
 // 将练习页面的限制信息移动到要求部分的末尾
-PRACTICE_ROUTE.addTweak(() => {
+export function moveProblemLimits(): void {
     const problemParams = document.querySelector('.problem-page .problem-params');
     const problemContent = document.querySelector('.problem-page .problem-content');
 
@@ -106,10 +82,10 @@ PRACTICE_ROUTE.addTweak(() => {
         dd.appendChild(problemParams);
         problemContent.appendChild(dd);
     }
-})
+}
 
 // 为代码块添加复制按钮
-PRACTICE_ROUTE.addTweak(() => {
+export function addCopyButtons(): void {
     const pres = document.querySelectorAll('.problem-content pre');
 
     pres.forEach(pre => {
@@ -149,10 +125,10 @@ PRACTICE_ROUTE.addTweak(() => {
             wrapper.appendChild(copyButton);
         }
     });
-});
+}
 
 // 移除练习页面描述中的所有 style 属性
-PRACTICE_ROUTE.addTweak(() => {
+export function clearDescriptionStyles(): void {
     const description = document.querySelector('.problem-page .problem-content dd');
     // remove all style attributes from the description
     if (description) {
@@ -163,10 +139,10 @@ PRACTICE_ROUTE.addTweak(() => {
             span.removeAttribute('style');
         });
     }
-})
+}
 
 // 将提交状态的标题移动到提交状态的最前面
-SOLUTION_ROUTE.addTweak(() => {
+export function moveSubmissionStatus(): void {
     const main = document.querySelector('.submitStatus');
     if (!main) {
         console.error('Main element not found');
@@ -184,10 +160,10 @@ SOLUTION_ROUTE.addTweak(() => {
     }
     main.insertBefore(statusAnchor, main.firstChild);
     statusTitle.remove();
-})
+}
 
 // 将评分按钮和相关题目移动到信息栏
-SOLUTION_ROUTE.addTweak(() => {
+export function moveEvaluationDetails(): void {
     const infomation = document.querySelector('#side .compile-info');
 
     const ratingButton = document.querySelector('button#create-rating');
@@ -200,20 +176,20 @@ SOLUTION_ROUTE.addTweak(() => {
         console.log('relatedProblems :>> ', relatedProblems);
         infomation.appendChild(relatedProblems);
     }
-})
+}
 
 // 将比赛描述中的通知移动到描述的最前面
-MATCH_ROUTE.addTweak(() => {
+export function moveContestNotification(): void {
     const description = document.querySelector('#main .contest-description');
     const notification = document.querySelector('#side .notification');
     console.log('notification :>> ', description);
     if (description && notification) {
         description.insertBefore(notification, description.firstChild);
     }
-})
+}
 
 // 重命名注册页面的标题，添加一个副标题
-REGISTER_ROUTE.addTweak(() => {
+export function decorateRegisterTitle(): void {
     const title = document.querySelector('#main h2');
     if (title) {
         title.textContent = '欢迎来到 OpenJudge';
@@ -222,4 +198,4 @@ REGISTER_ROUTE.addTweak(() => {
         subtitle.className = 'subtitle';
         title.insertAdjacentElement('afterend', subtitle);
     }
-})
+}

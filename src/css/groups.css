@@ -1,6 +1,3 @@
-@import "./common.css";
-@import "./components/site-header.css";
-
 /* 左侧导航栏 */
 #side.group-panel {
     width: auto;

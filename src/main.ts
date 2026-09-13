@@ -1,13 +1,14 @@
-import { ALL_ROUTE, routes } from './route.ts';
-import './dom-tweaks.ts';
-import './css-bindings.ts';
+import { routes } from './routes';
 
-const url = window.location.href;
-for (const route of routes) {
-    if (route.matches(url)) {
-        route.apply();
-        break; // Only apply the first matching route
+async function initialize(): Promise<void> {
+    try {
+        const route = routes.find(route => route.matches(window.location.href));
+        await route?.apply();
+    } catch (error) {
+        console.error('OpenJudge-Art initialization failed:', error);
+    } finally {
+        document.dispatchEvent(new Event('openjudge-art:ready'));
     }
 }
-ALL_ROUTE.apply(); // Apply global styles and tweaks
 
+void initialize();

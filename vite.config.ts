@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite';
 import monkey from 'vite-plugin-monkey';
+import { beginPageLoading } from './src/page-loading';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: { inlineDynamicImports: true },
+    },
+  },
   plugins: [
     monkey({
       entry: 'src/main.ts',
+      generate: ({ userscript, mode }) => mode === 'meta'
+        ? userscript
+        : `${userscript}\n;(${beginPageLoading.toString()})();\n`,
       userscript: {
         author: 'LeoDreamer',
         icon: 'https://i1.hdslb.com/bfs/face/c08b00534afc32a256a7f8b4442ef92ed181b471.jpg@128w_128h_1c_1s.webp',

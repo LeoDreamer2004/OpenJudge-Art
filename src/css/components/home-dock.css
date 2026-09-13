@@ -3,6 +3,8 @@
     position: fixed;
     right: 30px;
     top: 30%;
+    z-index: 9999;
+    transform-origin: right center;
 
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -26,14 +28,6 @@
     border-radius: 50%;
     border: 1px solid var(--card-border);
     position: relative;
-}
-
-.dock {
-    position: fixed;
-    right: 30px;
-    top: 30%;
-    z-index: 9999;
-    transform-origin: right center;
 }
 
 .dock .dock-item {
@@ -125,18 +119,11 @@
     margin-bottom: 12px;
 }
 
-.dock-field-top,
 .dock-field-inline {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-}
-
-.dock-field input[type="range"] {
-    width: 100%;
-    margin-top: 8px;
-    accent-color: var(--accent-2-text);
 }
 
 .dock-field input[type="text"] {

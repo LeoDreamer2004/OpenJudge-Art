@@ -1,6 +1,3 @@
-@import "./common.css";
-@import "./components/site-header.css";
-
 .navi-menu#navigation {
     li {
         background-color: var(--card-bg);

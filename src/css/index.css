@@ -1,8 +1,3 @@
-@import "./common.css";
-@import "./global/animation.css";
-@import "./components/site-header.css";
-@import "./components/home-dock.css";
-
 #main {
     h2 {
         font-size: 1.5em;
